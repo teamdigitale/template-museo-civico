@@ -3,12 +3,16 @@
   "type": "module",
   "version": "0.0.1",
   "scripts": {
-    "dev": "astro dev",
+    "dev": "astro dev --port 3000",
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^5.5.5"
+    "astro": "^5.5.5",
+    "bootstrap-italia": "^2.14.0"
+  },
+  "devDependencies": {
+    "sass-embedded": "^1.86.0"
   }
 }

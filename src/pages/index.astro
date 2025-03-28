@@ -1,11 +1,37 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import { getCollection } from "astro:content";
+import Layout from "../layouts/Layout.astro";
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+// Get all entries from a collection.
+// Requires the name of the collection as an argument.
+const allNews = await getCollection("news");
+const allEvents = await getCollection("events");
+const allWorks = await getCollection("works");
+const config = getCollection("config");
 ---
 
 <Layout>
-	<Welcome />
+  <div class='container my-5'>
+		{JSON.stringify(config,null,2)}
+    <h3>Events</h3>
+    {
+      allEvents.map((item) => {
+        return <div>{item.data.title}</div>;
+      })
+    }
+    <h3>Works</h3>
+    {
+      allWorks.map((item) => {
+        return <div>
+					<img src={item.data.image.url} alt={item.data.image.alt} height=200/>
+					{item.data.title}</div>;
+      })
+    }
+    <h3>News</h3>
+    {
+      allNews.map((item) => {
+        return <div>{item.data.title}</div>;
+      })
+    }
+  </div>
 </Layout>

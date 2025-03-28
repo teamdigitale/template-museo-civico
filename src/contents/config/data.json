@@ -1,0 +1,174 @@
+{
+  "seo": {
+    "title": "MC",
+    "description": "Museo civico di Nome Città",
+    "keywords": ["museo", "arte", "cultura", "città"]
+  },
+  "socials": [
+    {
+      "icon": "fb",
+      "url": "/"
+    },
+    {
+      "icon": "insta",
+      "url": "/"
+    },
+    {
+      "title": "yt",
+      "url": "/"
+    }
+  ],
+  "header": {
+    "title": "MC",
+    "subtitle": "Museo Civico Nome Città",
+    "image": "",
+    "socials": true,
+    "nav": [
+      {
+        "title": "Museo",
+        "link": "/",
+        "childs": [
+          {
+            "title": "Orari e biglietti",
+            "link": "/"
+          },
+          {
+            "title": "Come arrivare",
+            "link": "/"
+          },
+          {
+            "title": "Accessibilità",
+            "link": "/"
+          }
+        ]
+      },
+      {
+        "title": "Mostre ed eventi",
+        "link": "/#eventi"
+      },
+      {
+        "title": "Works",
+        "link": "/#works"
+      },
+      {
+        "title": "News",
+        "link": "/#news"
+      }
+    ]
+  },
+  "footer": {
+    "title": "MC",
+    "image": "",
+    "rows": [
+      {
+        "id": 0,
+        "sections": [
+          {
+            "title": "Il Museo",
+            "links": [
+              {
+                "title": "Organizza la visita",
+                "url": "/"
+              },
+              {
+                "title": "Esplora il Museo",
+                "url": "/"
+              },
+              {
+                "title": "Mostre ed eventi",
+                "url": "/"
+              },
+              {
+                "title": "Educazione e ricerca",
+                "url": "/"
+              }
+            ]
+          },
+          {
+            "title": "Chi Siamo",
+            "links": [
+              {
+                "title": "Organizzazione",
+                "url": "/"
+              },
+              {
+                "title": "Dirigenti e personale",
+                "url": "/"
+              },
+              {
+                "title": "Uffici e orari",
+                "url": "/"
+              },
+              {
+                "title": "Supporta il Museo",
+                "url": "/"
+              },
+              {
+                "title": "Lavora con noi",
+                "url": "/"
+              }
+            ]
+          },
+          {
+            "title": "Trasparenza",
+            "links": [
+              {
+                "title": "Amministrazione trasparente",
+                "url": "/"
+              },
+              {
+                "title": "Regolamenti",
+                "url": "/"
+              },
+              {
+                "title": "Bandi e gare",
+                "url": "/"
+              },
+              {
+                "title": "Bilanci",
+                "url": "/"
+              },
+              {
+                "title": "Beni, immobili e patrimoni",
+                "url": "/"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 1,
+        "sections": [
+          {
+            "title": "Contatti",
+            "texts": [
+              "Piazza Lorem ipsum dolor, 23 099872 - Città, Italia",
+              "(AA)-CF 99847593875934",
+              "Tel: 0983475983475",
+              "P.IVA: 0983475983475"
+            ],
+
+            "links": [
+              {
+                "title": "Feedback e suggerimenti",
+                "url": "/"
+              },
+              {
+                "title": "Stampa",
+                "url": "/"
+              },
+              {
+                "title": "FAQ",
+                "url": "/"
+              }
+            ]
+          },
+          {
+            "title": "Seguici su",
+            "socials": true
+          }
+        ]
+      }
+    ]
+  }
+}
