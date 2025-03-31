@@ -2,16 +2,24 @@ $primary-h: 0;
 $primary-s: 0;
 $primary-b: 20;
 
-$primary: #333333;
-
+$primary: #333;
 $header-slim-bg-color: #262626;
+
 $color-text-primary-hover: hsl(0, 0%, 20%);
 $color-text-primary-active: hsl(0, 0%, 20%);
-$color-background-primary-lighter: hsl(0, 0%, 20%);
+
+$secondary: #7d2670;
 
 // CSS variables
-:root {
-  --bs-link-hover-color: #{$color-text-primary-hover};
-}
+// :root {
+//   --bs-link-color: #{$accent};
+//   --bs-link-hover-color: #{$accent};
+// }
 
+.it-footer-main {
+  background-color: #333!important;
+}
+.it-footer-small-prints{
+  background-color: #262626!important;
+}
 @import "bootstrap-italia/src/scss/bootstrap-italia";

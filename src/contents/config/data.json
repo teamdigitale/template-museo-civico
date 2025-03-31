@@ -6,16 +6,20 @@
   },
   "socials": [
     {
-      "icon": "fb",
-      "url": "/"
+      "title": "facebook",
+      "url": "https://facebook.com"
     },
     {
-      "icon": "insta",
-      "url": "/"
+      "title": "instagram",
+      "url": "https://instagram.com"
     },
     {
-      "title": "yt",
-      "url": "/"
+      "title": "youtube",
+      "url": "https://youtube.com"
+    },
+    {
+      "title": "github",
+      "url": "https://github.com"
     }
   ],
   "header": {
@@ -28,6 +32,18 @@
         "title": "Museo",
         "link": "/",
         "childs": [
+          {
+            "title": "Orari e biglietti",
+            "link": "/"
+          },
+          {
+            "title": "Come arrivare",
+            "link": "/"
+          },
+          {
+            "title": "Accessibilità",
+            "link": "/"
+          },
           {
             "title": "Orari e biglietti",
             "link": "/"

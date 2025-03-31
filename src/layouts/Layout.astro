@@ -4,6 +4,12 @@ import "../styles/style.scss";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import bsi from "bootstrap-italia/dist/js/bootstrap-italia.bundle.min.js?url";
+
+const config = await getCollection("config");
+const header = config.find((item) => item.id === "header");
+const footer = config.find((item) => item.id === "footer");
+const seo = config.find((item) => item.id === "seo");
+const socials = config.find((item) => item.id === "socials");
 ---
 
 <!doctype html>
@@ -23,18 +29,31 @@ import bsi from "bootstrap-italia/dist/js/bootstrap-italia.bundle.min.js?url";
       href='https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400&display=swap'
       rel='stylesheet'
     />
-    <!-- <link
-      rel='stylesheet'
-      href='boostrap-italia/dist/css/bootstrap-italia.min.css'
-    /> -->
-    <title>{Astro.props.title || "Template Museo Civico"}</title>
+    <meta name='title' content={seo?.data.title || "Template Museo Civico"} />
+    <meta name='description' content={seo?.data.description} />
+    <meta name='keywords' content={seo?.data.keywords.join(",")} />
+    <title>
+      {Astro.props.title || seo?.data.title || "Template Museo Civico"}
+    </title>
   </head>
   <body>
-    <Header />
+    <Header data={header?.data} socials={socials?.data} />
     <main>
+      <!-- {
+        config.map((slice) => {
+          const data = slice.data;
+          return (
+            <div>
+              <h3>{slice.id}</h3>
+              <small>{JSON.stringify(slice.data)}</small>
+              <hr />
+            </div>
+          );
+        })
+      } -->
       <slot />
     </main>
-    <Footer />
+    <Footer data={footer?.data} socials={socials?.data} />
   </body>
   <style>
     html,
