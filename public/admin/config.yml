@@ -1,0 +1,48 @@
+local_backend: true
+backend:
+  name: git-gateway
+  branch: main # Branch to update (optional; defaults to master)
+
+media_folder: "public/assets" # Location where files will be stored in the repo
+public_folder: "/assets" # The src attribute for uploaded media
+
+collections:
+  - name: "news"
+    label: "News" # Used in the UI
+    folder: "src/contents/news" # The path to the folder where the documents are stored
+    format: 'frontmatter'
+    create: true # Allow users to create new documents in this collection
+    fields: # The fields for each document, usually in frontmatter
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description",  default: "" }
+      - { label: "Publish Date", name: "pubDate", widget: "datetime" }
+      - { label: "Featured Image", name: "image", widget: "image" }
+      - { label: "Tags", name: "tags", widget: "list", default: ["news"] }
+      - { label: "Body", name: "body", widget: "markdown" }
+  - name: "events"
+    label: "Events" # Used in the UI
+    folder: "src/contents/events" # The path to the folder where the documents are stored
+    format: 'frontmatter'
+    create: true # Allow users to create new documents in this collection
+    fields: # The fields for each document, usually in frontmatter
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description",  default: "" }
+      - { label: "Start Date", name: "from", widget: "datetime" }
+      - { label: "End Date", name: "to", widget: "datetime" }
+      - { label: "Location", name: "location", widget: "string" }
+      - { label: "Url", name: "url", widget: "string" }
+      - { label: "Tags", name: "tags", widget: "list", default: ["events"] }
+      - { label: "Body", name: "body", widget: "markdown" }
+  - name: "works"
+    label: "Artworks" # Used in the UI
+    folder: "src/contents/works" # The path to the folder where the documents are stored
+    format: 'frontmatter'
+    create: true # Allow users to create new documents in this collection
+    fields: # The fields for each document, usually in frontmatter
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description",  default: "" }
+      - { label: "Author", name: "author", widget: "string" }
+      - { label: "Image", name: "image", widget: "image" }
+      - { label: "Tags", name: "tags", widget: "list", default: ["artworks"] }
+      - { label: "Body", name: "body", widget: "markdown" }
+
