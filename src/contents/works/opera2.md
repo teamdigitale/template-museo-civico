@@ -1,11 +1,14 @@
 ---
-title: "Opera2"
-description: "The second opera of Anne Nonimus."
-author: "Nonimus Anne"
 image:
-  url: "https://plus.unsplash.com/premium_photo-1664013263421-91e3a8101259?q=80&w=720&auto=format&fit=crop"
-  alt: "balblabalabla"
-tags: ["artwork", "abstract"]
+  url: https://plus.unsplash.com/premium_photo-1664013263421-91e3a8101259?q=80&w=720&auto=format&fit=crop
+  alt: Pittura a strati di colore blu principlamente ma con sfumature di blu dal
+    nero al bianco e giallo, potrebbe rappresentare un'onda stilizzata
+title: Marea
+description: The second opera of Anne Nonimus.
+author: Nonimus Anne
+tags:
+  - artwork
+  - abstract
 ---
 
 elementum nisi quis eleifend quam adipiscing. In hac

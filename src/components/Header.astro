@@ -1,5 +1,5 @@
 ---
-const { data, socials } = Astro.props;
+const { data, socials, seo } = Astro.props;
 ---
 
 <header class='it-header-wrapper'>
@@ -97,8 +97,8 @@ const { data, socials } = Astro.props;
               <div class='it-brand-wrapper'>
                 <a href='#'>
                   {
-                    data.img ? (
-                      <img src={data.img} />
+                    seo?.logo ? (
+                      <img src={seo.logo} />
                     ) : (
                       <svg class='icon' aria-hidden='true'>
                         <use href='icons/sprites.svg#it-pa' />
@@ -106,9 +106,9 @@ const { data, socials } = Astro.props;
                     )
                   }
                   <div class='it-brand-text'>
-                    <div class='it-brand-title'>{data.title}</div>
+                    <div class='it-brand-title'>{seo.title}</div>
                     <div class='it-brand-tagline d-none d-md-block'>
-                      {data.subtitle}
+                      {seo.subtitle}
                     </div>
                   </div>
                 </a>

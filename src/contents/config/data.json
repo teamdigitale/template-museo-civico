@@ -1,189 +1,172 @@
 {
+  "siteName": "MuseoCIvico",
   "seo": {
-    "title": "MC",
-    "subtitle": "Museo Civico Nome Città",
-    "description": "Museo civico di Nome Città",
-    "keywords": ["museo", "arte", "cultura", "città"],
-    "logo": ""
+    "title": "Museo Civico",
+    "subtitle": "Museo CIvico di Nome città ",
+    "description": "Template di esempio di un museo civico blablablal",
+    "keywords": [
+      "museo",
+      "template",
+      "mah"
+    ],
+    "image": "/assets/logo.svg"
   },
   "socials": [
     {
-      "title": "facebook",
-      "url": "https://facebook.com"
+      "title": "youtube",
+      "url": "https://youtube.com"
     },
     {
       "title": "instagram",
       "url": "https://instagram.com"
     },
     {
-      "title": "youtube",
-      "url": "https://youtube.com"
-    },
-    {
       "title": "github",
       "url": "https://github.com"
     }
   ],
-  "header": {
-    "socials": true,
-    "nav": [
-      {
-        "title": "Museo",
-        "link": "/",
-        "childs": [
-          {
-            "title": "Orari e biglietti",
-            "link": "/"
-          },
-          {
-            "title": "Come arrivare",
-            "link": "/"
-          },
-          {
-            "title": "Accessibilità",
-            "link": "/"
-          },
-          {
-            "title": "Orari e biglietti",
-            "link": "/"
-          },
-          {
-            "title": "Come arrivare",
-            "link": "/"
-          },
-          {
-            "title": "Accessibilità",
-            "link": "/"
-          }
-        ]
-      },
-      {
-        "title": "Mostre ed eventi",
-        "link": "/#eventi"
-      },
-      {
-        "title": "Works",
-        "link": "/#works"
-      },
-      {
-        "title": "News",
-        "link": "/#news"
-      }
-    ]
-  },
-  "footer": {
-    "title": "MC",
-    "image": "",
-    "rows": [
-      {
-        "id": 0,
-        "sections": [
-          {
-            "title": "Il Museo",
-            "links": [
-              {
-                "title": "Organizza la visita",
-                "url": "/"
-              },
-              {
-                "title": "Esplora il Museo",
-                "url": "/"
-              },
-              {
-                "title": "Mostre ed eventi",
-                "url": "/"
-              },
-              {
-                "title": "Educazione e ricerca",
-                "url": "/"
-              }
-            ]
-          },
-          {
-            "title": "Chi Siamo",
-            "links": [
-              {
-                "title": "Organizzazione",
-                "url": "/"
-              },
-              {
-                "title": "Dirigenti e personale",
-                "url": "/"
-              },
-              {
-                "title": "Uffici e orari",
-                "url": "/"
-              },
-              {
-                "title": "Supporta il Museo",
-                "url": "/"
-              },
-              {
-                "title": "Lavora con noi",
-                "url": "/"
-              }
-            ]
-          },
-          {
-            "title": "Trasparenza",
-            "links": [
-              {
-                "title": "Amministrazione trasparente",
-                "url": "/"
-              },
-              {
-                "title": "Regolamenti",
-                "url": "/"
-              },
-              {
-                "title": "Bandi e gare",
-                "url": "/"
-              },
-              {
-                "title": "Bilanci",
-                "url": "/"
-              },
-              {
-                "title": "Beni, immobili e patrimoni",
-                "url": "/"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "id": 1,
-        "sections": [
-          {
-            "title": "Contatti",
-            "texts": [
-              "Piazza Lorem ipsum dolor, 23 099872 - Città, Italia",
-              "(AA)-CF 99847593875934",
-              "Tel: 0983475983475",
-              "P.IVA: 0983475983475"
-            ],
-
-            "links": [
-              {
-                "title": "Feedback e suggerimenti",
-                "url": "/"
-              },
-              {
-                "title": "Stampa",
-                "url": "/"
-              },
-              {
-                "title": "FAQ",
-                "url": "/"
-              }
-            ]
-          },
-          {
-            "title": "Seguici su",
-            "socials": true
-          }
-        ]
-      }
-    ]
-  }
+  "header": [
+    {
+      "socials": true,
+      "nav": [
+        {
+          "title": "Mostre ed eventi",
+          "link": "/events"
+        },
+        {
+          "title": " Works",
+          "link": "/#wroks"
+        },
+        {
+          "title": "News",
+          "link": "/#news"
+        },
+        {
+          "title": "Museo",
+          "link": "/"
+        }
+      ]
+    }
+  ],
+  "footer": [
+    {
+      "rows": [
+        {
+          "id": 1,
+          "sections": [
+            {
+              "socials": false,
+              "title": "Il Museo",
+              "links": [
+                {
+                  "title": "Organizza la visita",
+                  "url": "/musem#visit"
+                },
+                {
+                  "title": "Esplora il museo",
+                  "url": "/musem#explore"
+                },
+                {
+                  "title": "Mostre ed eventi",
+                  "url": "/events"
+                },
+                {
+                  "title": "Educazione e ricerca",
+                  "url": "/museum#edu"
+                }
+              ]
+            },
+            {
+              "socials": false,
+              "title": "Chi Siamo",
+              "links": [
+                {
+                  "title": "Organizzazione",
+                  "url": "/about#org"
+                },
+                {
+                  "url": "/about#people",
+                  "title": "Dirigenti e personale"
+                },
+                {
+                  "title": "Uffici e orari",
+                  "url": "/about#info"
+                },
+                {
+                  "title": "Supporta il museo",
+                  "url": "/about#support"
+                },
+                {
+                  "title": "Lavora con noi",
+                  "url": "/about#job"
+                }
+              ]
+            },
+            {
+              "socials": false,
+              "title": "Trasparenza",
+              "links": [
+                {
+                  "title": "Amministrazione trasparente",
+                  "url": "/project"
+                },
+                {
+                  "url": "/project#rules",
+                  "title": "Regolamenti"
+                },
+                {
+                  "title": "Bandi e gare",
+                  "url": "/project"
+                },
+                {
+                  "title": "Bilanci",
+                  "url": "/project"
+                },
+                {
+                  "title": "Beni immobili e patrimoni",
+                  "url": "/project"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "sections": [
+            {
+              "socials": false,
+              "title": "Contatti",
+              "texts": [
+                "Piazza Lorem ipsum dolor",
+                "23 099872 - Città - Italia",
+                "(AA)-CF 99847593875934",
+                "Tel: 0983475983475",
+                "P.IVA: 0983475983475"
+              ]
+            },
+            {
+              "socials": true,
+              "title": "Seguici su ",
+              "links": [
+                {
+                  "title": "Fedback e suggerimenti",
+                  "url": "/"
+                },
+                {
+                  "title": "Stampa",
+                  "url": "/"
+                },
+                {
+                  "title": "FAQ",
+                  "url": "/"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "domain": "https://template-museocivico-italia.vercel.app",
+  "logo": "/assets/logo.svg"
 }
