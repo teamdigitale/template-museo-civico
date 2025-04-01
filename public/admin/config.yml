@@ -10,39 +10,166 @@ collections:
   - name: "news"
     label: "News" # Used in the UI
     folder: "src/contents/news" # The path to the folder where the documents are stored
-    format: 'frontmatter'
+    format: "frontmatter"
     create: true # Allow users to create new documents in this collection
     fields: # The fields for each document, usually in frontmatter
+      - label: "Image"
+        name: "image"
+        widget: "object"
+        required: false
+        fields:
+            - { label: "Url", name: "url", widget: "image" }
+            - { label: "Alt", name: "alt", widget: string, default: "thumb" }
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Description", name: "description",  default: "" }
       - { label: "Publish Date", name: "pubDate", widget: "datetime" }
-      - { label: "Featured Image", name: "image", widget: "image" }
-      - { label: "Tags", name: "tags", widget: "list", default: ["news"] }
+      - { label: "Tags", name: "tags", widget: "list", default: ["news"], required: false }
       - { label: "Body", name: "body", widget: "markdown" }
   - name: "events"
     label: "Events" # Used in the UI
     folder: "src/contents/events" # The path to the folder where the documents are stored
-    format: 'frontmatter'
+    format: "frontmatter"
     create: true # Allow users to create new documents in this collection
     fields: # The fields for each document, usually in frontmatter
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Description", name: "description",  default: "" }
-      - { label: "Start Date", name: "from", widget: "datetime" }
-      - { label: "End Date", name: "to", widget: "datetime" }
-      - { label: "Location", name: "location", widget: "string" }
-      - { label: "Url", name: "url", widget: "string" }
-      - { label: "Tags", name: "tags", widget: "list", default: ["events"] }
+      - { label: "Start Date", name: "from", widget: "datetime", required: false }
+      - { label: "End Date", name: "to", widget: "datetime", required: false }
+      - { label: "Location", name: "location", widget: "string", required: false }
+      - { label: "Url", name: "url", widget: "string", required: false }
+      - { label: "Tags", name: "tags", widget: "list", default: ["events"], required: false }
       - { label: "Body", name: "body", widget: "markdown" }
   - name: "works"
     label: "Artworks" # Used in the UI
     folder: "src/contents/works" # The path to the folder where the documents are stored
-    format: 'frontmatter'
+    format: "frontmatter"
     create: true # Allow users to create new documents in this collection
     fields: # The fields for each document, usually in frontmatter
+      - label: "Image"
+        name: "image"
+        widget: "object"
+        required: false
+        fields:
+            - { label: "Url", name: "url", widget: "image" }
+            - { label: "Alt", name: "alt", widget: string, default: "artwork" }
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Description", name: "description",  default: "" }
-      - { label: "Author", name: "author", widget: "string" }
-      - { label: "Image", name: "image", widget: "image" }
-      - { label: "Tags", name: "tags", widget: "list", default: ["artworks"] }
+      - { label: "Author", name: "author", widget: "string", required: false}
+      - { label: "Tags", name: "tags", widget: "list", default: ["artworks"], required: false }
       - { label: "Body", name: "body", widget: "markdown" }
+  - label: "Global config"
+    name: globals
+    format: "json"
+    editor:
+      preview: false
+    files:
+      - label: "Site options"
+        name: site
+        file: "content/config/data.json"
+        fields:
+          - { label: "Site name", name: "siteName", widget: "string", required: false}
+          - { label: "Domain", name: "domain", widget: "string", required: false}
+          - { label: "Logo", name: "logo", widget: "image", required: false}
+          - label: "SEO"
+            name: "seo"
+            widget: "object"
+            fields:
+              - label: "Title"
+                name: "title"
+                widget: "string"
+              - label: "Subtitle"
+                name: "subtitle"
+                widget: "string"
+                required: false
+              - label: "logo"
+                name: "image"
+                widget: "image"
+                required: false
+              - label: "Description"
+                name: "description"
+                required: false
+                widget: "string"
+              - label: "keywords"
+                name: "keywords"
+                widget: "list"
+                required: false
+          - label: "Socials"
+            name: "socials"
+            widget: "list"
+            fields:
+              - label: "title"
+                name: "title"
+                widget: "string"
+              - label: "url"
+                name: "url"
+                widget: "string"
+          - label: "Header"
+            name: "header"
+            widget: "list"
+            fields:
+              - label: "Show Socials"
+                name: "socials"
+                widget: "boolean"
+              - label: "Navigation"
+                name: "nav"
+                widget: "list"
+                fields:
+                  - label: "title"
+                    name: "title"
+                    widget: "string"
+                  - label: "link"
+                    name: "link"
+                    widget: "string"
+                  - label: "childs"
+                    name: "childs"
+                    required: false
+                    widget: "list"
+                    fields:
+                    - label: "title"
+                      name: "title"
+                      widget: "string"
+                    - label: "link"
+                      name: "link"
+                      widget: "string"
+          - label: "Footer"
+            name: "footer"
+            widget: "list"
+            fields:
+              - label: "Rows"
+                name: "rows"
+                widget: "list"
+                fields:
+                  - label: "id"
+                    name: "id"
+                    widget: "number"
+                  - label: "Sections"
+                    name: "sections"
+                    required: false
+                    widget: "list"
+                    fields:
+                    - label: "Title"
+                      name: "title"
+                      widget: "string"
+                    - label: "Show socials"
+                      name: "socials"
+                      widget: "boolean"
+                      default: false
+                    - label: "Links"
+                      name: "links"
+                      required: false
+                      widget: "list"
+                      fields:
+                      - label: "title"
+                        name: "title"
+                        widget: "string"
+                      - label: "url"
+                        name: "url"
+                        widget: "string"
+                    - label: "Contatti"
+                      name: "texts"
+                      required: false
+                      widget: "list"
+
+
+
 

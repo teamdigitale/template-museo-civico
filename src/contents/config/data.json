@@ -1,8 +1,10 @@
 {
   "seo": {
     "title": "MC",
+    "subtitle": "Museo Civico Nome Città",
     "description": "Museo civico di Nome Città",
-    "keywords": ["museo", "arte", "cultura", "città"]
+    "keywords": ["museo", "arte", "cultura", "città"],
+    "logo": ""
   },
   "socials": [
     {
@@ -23,9 +25,6 @@
     }
   ],
   "header": {
-    "title": "MC",
-    "subtitle": "Museo Civico Nome Città",
-    "image": "",
     "socials": true,
     "nav": [
       {
