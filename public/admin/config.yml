@@ -17,42 +17,75 @@ collections:
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Description", name: "description", widget: "string" }
-      - { label: "Publish Date", name: "date", widget: "date" }
+      - { label: "Publish Date", name: "datetime", widget: "datetime" }
+      - label: "Gallery"
+        name: "gallery"
+        widget: "list"
+        max: 6
+        min: 1
+        fields:
+          - label: "Image"
+            name: "image"
+            widget: "object"
+            fields:
+              - { label: "Url", name: "url", widget: "image" }
+              - { label: "Alt", name: "alt", widget: string, default: "thumb" }
       - label: "Blocks"
         name: "blocks"
         widget: "list"
         types:
           - label: "Hero Block"
-            name: "heroBlock"
+            name: "hero"
             required: false
             widget: "object"
             fields:
               - { label: "Title", name: "title", widget: "string", required: false }
               - { label: "Text", name: "text", widget: "string", required: false }
               - { label: "Image", name: "image", widget: "image",  required: false }
-          - label: "Text Block"
-            name: "textBlock"
-            widget: "markdown"
-            required: false
+          - label: "Section"
+            name: "section"
+            widget: "object"
+            fields:
+              - { label: "Title", name: "title", widget: "string", required: false }
+              - { label: "Show link", name: "linked", widget: "boolean", default: false }
+              - { label: "Anchor Name", name: "link", widget: "string", pattern: ["^[a-z0-9]+(?:-[a-z0-9]+)*$", "Must be a link name, no spaces or special chars"] , required: false}
+              - { label: "Content", name: "body", widget: "markdown", required: true }
           - label: "Image Block"
             name: "imageBlock"
-            required: false
             widget: "object"
             fields:
               - { label: "Image", name: "image", widget: "image" }
               - { label: "Alt text", name: "alt", widget: "string" }
-          - label: "Gallery Block"
-            name: "galleryBlock"
-            required: false
-            widget: "list"
-            fields:
-              - label: "Image"
-                name: "image"
-                widget: "object"
-                required: false
-                fields:
-                  - { label: "Url", name: "url", widget: "image" }
-                  - { label: "Alt", name: "alt", widget: string, default: "thumb" }
+          - label: "News Section"
+            name: "news"
+            widget: "relation"
+            collection: "news"
+            multiple: true
+            min: 2
+            max: 4
+            search_fields: ["title"]
+            display_fields: ["title"]
+            value_field: "{{slug}}"
+          - label: "Events Section"
+            name: "events"
+            widget: "relation"
+            collection: "events"
+            multiple: true
+            min: 2
+            max: 4
+            search_fields: ["title"]
+            display_fields: ["title"]
+            value_field: "{{slug}}"
+          - label: "Works Section"
+            name: "works"
+            widget: "relation"
+            collection: "works"
+            multiple: true
+            min: 2
+            max: 4
+            search_fields: ["title"]
+            display_fields: ["title"]
+            value_field: "{{slug}}"
   - name: "news"
     label: "News" # Used in the UI
     folder: "src/contents/news" # The path to the folder where the documents are stored
@@ -139,6 +172,7 @@ collections:
                 name: "keywords"
                 widget: "list"
                 required: false
+                default: ["italia"]
           - label: "Socials"
             name: "socials"
             widget: "list"
