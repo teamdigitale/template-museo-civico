@@ -1,22 +1,35 @@
 ---
 title: Home
 description: Home page
-datetime: 2025-04-01T19:30:00.000Z
+datetime: 2025-04-01T20:44:00.000Z
+gallery: []
 blocks:
   - type: hero
-    title: From 0 To Hero
+    title: From zero to Hero
     text: Zero still my Hero
     image: /assets/interior-national-gallery-of-art-washington-dc.jpg
-  - type: imageBlock
-    image: /assets/worlds-best-museums.jpg
-    alt: the museum
   - type: section
     linked: false
-    title: Text Section
     body: >-
-      Eat plants, meow, and throw up because i ate plants
+      Human clearly uses close to one life a night no one naps that long so i
+      revive by standing on chestawaken! walk on car leaving trail of paw prints
+      on hood and windshield cat jumps and falls onto the couch purrs and wakes
+      up in a new dimension filled with kitty litter meow meow yummy there is a
+      bunch of cats hanging around eating catnip thug cat and eat half my food
+      and ask for more. 
 
-      Taco cat backwards spells taco cat cats woo pee on walls it smells like breakfast
 
-      Cat ipsum dolor sit amet, the cat was chasing the mouse, yet miaow then turn around and show you my bum. Rub whiskers on bare skin act innocent. You are a captive audience while sitting on the toilet, pet me. Scoot butt on the rug annoy kitten brother with poking yet i bet my nine lives on you-oooo-ooo-hooo. Claw drapes more napping, more napping all the napping is exhausting hack up furballs chase imaginary bugs kitty loves pigs so meow pretend you want to go out but then don't.
+      > Drool chill on the couch table. 
+
+
+      I is not fat, i is fluffy claw your carpet in places everyone can see - why hide my amazing artistic clawing skills? twitch tail in permanent irritation but give attitude no, you can't close the door, i haven't decided whether or not i wanna go out. What the heck just happened, something feels fishy. 
+
+
+      Haha you hold me hooman i scratch mewl for food at 4am ears back wide eyed and decide to want nothing to do with my owner today for eat and than sleep on your face so dismember a mouse and then regurgitate parts of it on the family room floor. Hiss at vacuum cleaner what a cat-ass-trophy!. 
+
+
+      Demand to be let outside at once, and expect owner to wait for me as i think about it demand to be let outside at once, and expect owner to wait for me as i think about it or pee in the shoe and this is the day yet enslave the hooman. 
+
+
+      Groom forever, stretch tongue and leave it slightly out, blep pet me pet me pet me pet me, bite, scratch, why are you petting me. Lasers are tiny mice.
 ---

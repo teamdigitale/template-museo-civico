@@ -10,10 +10,8 @@ collections:
   - name: pages
     label: "Pages" # Used in the UI
     folder: "src/contents/pages" # The path to the folder where the documents are stored
-    format: "frontmatter"
+    format: "frontmatter"  #nested: { depth: 3 }     #meta: { path: { widget: string, label: 'uri', index_file: 'index' } }
     create: true
-    #nested: { depth: 3 }
-    #meta: { path: { widget: string, label: 'uri', index_file: 'index' } }
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Description", name: "description", widget: "string" }
@@ -21,8 +19,6 @@ collections:
       - label: "Gallery"
         name: "gallery"
         widget: "list"
-        max: 6
-        min: 1
         fields:
           - label: "Image"
             name: "image"
@@ -48,7 +44,7 @@ collections:
             fields:
               - { label: "Title", name: "title", widget: "string", required: false }
               - { label: "Show link", name: "linked", widget: "boolean", default: false }
-              - { label: "Anchor Name", name: "link", widget: "string", pattern: ["^[a-z0-9]+(?:-[a-z0-9]+)*$", "Must be a link name, no spaces or special chars"] , required: false}
+              - { label: "Link name", name: "link", widget: "string", required: false }
               - { label: "Content", name: "body", widget: "markdown", required: true }
           - label: "Image Block"
             name: "imageBlock"
@@ -219,7 +215,3 @@ collections:
                       name: "texts"
                       required: false
                       widget: "list"
-
-
-
-
