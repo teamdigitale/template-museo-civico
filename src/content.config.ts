@@ -12,8 +12,12 @@ const events = defineCollection({
   loader: glob({ pattern: "**/*.md", base: "./src/contents/events" }),
 });
 
+const pages = defineCollection({
+  loader: glob({ pattern: "**/*.md", base: "./src/contents/pages" }),
+});
+
 const config = defineCollection({
   loader: file("./src/contents/config/data.json"),
 });
 
-export const collections = { news, works, events, config };
+export const collections = { pages, news, works, events, config };
