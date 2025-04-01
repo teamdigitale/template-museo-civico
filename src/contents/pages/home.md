@@ -12,7 +12,7 @@ blocks:
     alt: the museum
   - type: section
     linked: false
-    title: ""
+    title: Text Section
     body: >-
       Eat plants, meow, and throw up because i ate plants
 

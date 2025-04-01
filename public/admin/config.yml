@@ -56,36 +56,6 @@ collections:
             fields:
               - { label: "Image", name: "image", widget: "image" }
               - { label: "Alt text", name: "alt", widget: "string" }
-          - label: "News Section"
-            name: "news"
-            widget: "relation"
-            collection: "news"
-            multiple: true
-            min: 2
-            max: 4
-            search_fields: ["title"]
-            display_fields: ["title"]
-            value_field: "{{slug}}"
-          - label: "Events Section"
-            name: "events"
-            widget: "relation"
-            collection: "events"
-            multiple: true
-            min: 2
-            max: 4
-            search_fields: ["title"]
-            display_fields: ["title"]
-            value_field: "{{slug}}"
-          - label: "Works Section"
-            name: "works"
-            widget: "relation"
-            collection: "works"
-            multiple: true
-            min: 2
-            max: 4
-            search_fields: ["title"]
-            display_fields: ["title"]
-            value_field: "{{slug}}"
   - name: "news"
     label: "News" # Used in the UI
     folder: "src/contents/news" # The path to the folder where the documents are stored
