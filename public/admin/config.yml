@@ -1,7 +1,8 @@
 local_backend: true
 backend:
-  name: git-gateway
-  branch: main # Branch to update (optional; defaults to master)
+  name: "git-gateway"
+  branch: "main" # Branch to update (optional; defaults to master)
+  repository: "https://github.com/teamdigitale/template-museo-civico"
 
 media_folder: "public/assets" # Location where files will be stored in the repo
 public_folder: "/assets" # The src attribute for uploaded media
