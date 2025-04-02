@@ -1,3 +1,39 @@
+# Setup
+
+I'm using bun, so the lock has same versions, you can use yarn , npm or pnpm if you want but remove the lock please.
+To install deps:
+
+```sh
+bun install
+```
+
+and you are ready to go,
+run just
+
+```sh
+bun run dev
+```
+
+to see the website on [http://localhost:3000](http://localhost:3000)
+
+# Decap(Netlify) CMS
+
+you can start the cms running
+
+```sh
+bun run cms
+```
+
+then concurrently or in another shell run the dev
+
+```sh
+bun run dev
+```
+
+to see the website on [http://localhost:3000](http://localhost:3000)
+
+and you can now access the admin on [http://localhost:3000/admin](http://localhost:3000/admin)
+
 # Astro Starter Kit: Basics
 
 ```sh
@@ -34,9 +70,9 @@ To learn more about the folder structure of an Astro project, refer to [our guid
 
 All commands are run from the root of the project, from a terminal:
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `bun install`             | Installs dependencies                            |
+| Command               | Action                                           |
+| :-------------------- | :----------------------------------------------- |
+| `bun install`         | Installs dependencies                            |
 | `bun dev`             | Starts local dev server at `localhost:4321`      |
 | `bun build`           | Build your production site to `./dist/`          |
 | `bun preview`         | Preview your build locally, before deploying     |
