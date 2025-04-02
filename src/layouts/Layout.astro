@@ -37,20 +37,8 @@ const socials = config.find((item) => item.id === "socials");
     </title>
   </head>
   <body>
-    <Header data={header?.data} socials={socials?.data} seo={seo?.data} />
+    <Header data={header?.data[0]} socials={socials?.data} seo={seo?.data} />
     <main>
-      <!-- {
-        config.map((slice) => {
-          const data = slice.data;
-          return (
-            <div>
-              <h3>{slice.id}</h3>
-              <small>{JSON.stringify(slice.data)}</small>
-              <hr />
-            </div>
-          );
-        })
-      } -->
       <slot />
     </main>
     <Footer data={footer?.data} socials={socials?.data} />

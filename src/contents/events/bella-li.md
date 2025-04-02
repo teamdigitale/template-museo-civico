@@ -1,4 +1,7 @@
 ---
+image:
+  url: /assets/Candolim-Beach.jpg
+  alt: red sea
 title: "Bella Li "
 description: "Un evento mondano "
 from: 2025-05-01T15:00:00.000Z

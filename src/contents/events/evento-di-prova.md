@@ -1,4 +1,7 @@
 ---
+image:
+  url: /assets/Beetle-Nut-Trees.jpg
+  alt: bamboo forest
 title: Evento di Prova
 description: questo è un evento di prova
 from: 2025-03-31T17:02:00.000Z

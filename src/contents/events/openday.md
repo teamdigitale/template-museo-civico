@@ -1,10 +1,13 @@
 ---
-title: "Open Day 2026"
-description: "Netus et malesuada fames ac turpis egestas."
+image:
+  url: /assets/interior-national-gallery-of-art-washington-dc.jpg
+  alt: museum's room
+title: Open Day 2026
+description: Netus et malesuada fames ac turpis egestas.
 from: 2026-01-01
 to: 2026-01-03
-location: "plaza dela square 23, London"
-url: "https://eventbrite.com/fake-event"
+location: plaza dela square 23, London
+url: https://eventbrite.com/fake-event
 ---
 
 Sagittis purus sit amet volutpat.

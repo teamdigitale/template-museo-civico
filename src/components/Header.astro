@@ -1,5 +1,9 @@
 ---
-const { data, socials, seo } = Astro.props;
+const props = Astro.props;
+console.log("header", props);
+const { data, socials, seo } = props;
+const nav = data.nav;
+console.log("nav", nav);
 ---
 
 <header class='it-header-wrapper'>
@@ -183,7 +187,7 @@ const { data, socials, seo } = Astro.props;
                 <div class='menu-wrapper'>
                   <ul class='navbar-nav'>
                     {
-                      data.nav?.map(
+                      nav?.map(
                         (item: {
                           title: string;
                           url: string;

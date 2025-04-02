@@ -5,11 +5,11 @@ import PageBlocks from "../components/PageBlocks.astro";
 
 export async function getStaticPaths() {
   const pages = await getCollection("pages");
+  console.log(pages.map((i) => i.data.title));
 
   return pages
     .filter((i) => i.data.title !== "home")
     .map((page) => {
-      console.log(page);
       let slug = page.id;
       return {
         params: {

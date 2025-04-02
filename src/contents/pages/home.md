@@ -7,7 +7,7 @@ blocks:
   - type: hero
     title: From zero to Hero
     text: Zero still my Hero
-    image: /assets/interior-national-gallery-of-art-washington-dc.jpg
+    image: /assets/Dc.jpg
   - type: section
     linked: false
     body: >-

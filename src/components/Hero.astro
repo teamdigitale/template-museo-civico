@@ -1,5 +1,7 @@
 ---
-const { image, title, text, action } = Astro.props;
+const props = Astro.props;
+console.log("hero", props);
+const { image, title, text, action } = props;
 ---
 
 <section class='it-hero-wrapper it-dark it-overlay'>
@@ -7,7 +9,7 @@ const { image, title, text, action } = Astro.props;
   <div class='img-responsive-wrapper'>
     <div class='img-responsive'>
       <div class='img-wrapper'>
-        <img src={image.url} alt={image.alt} />
+        <img src={image} alt={title} />
       </div>
     </div>
   </div>
@@ -20,6 +22,7 @@ const { image, title, text, action } = Astro.props;
           <p class='d-none d-lg-block'>
             {text}
           </p>
+
           {
             action && (
               <div class='it-btn-container'>

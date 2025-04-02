@@ -4,6 +4,7 @@ import Layout from "../layouts/Layout.astro";
 import PageBlocks from "../components/PageBlocks.astro";
 import CardHorizontal from "../components/CardHorizontal.astro";
 import ImgCard from "../components/ImgCard.astro";
+import Hero from "../components/Hero.astro";
 
 // Get all entries from a collection.
 // Requires the name of the collection as an argument.
@@ -16,54 +17,57 @@ const home = allPages.find((i) => i.id === "home");
 const hero = home?.data.blocks.find((b: any) => b.type === "hero");
 const blocks = home?.data.blocks.filter((b: any) => b.type !== "hero");
 const links = blocks?.filter((b: any) => b.linked);
+
+console.log("hero", hero);
 ---
 
 <Layout>
+  {hero && <Hero {...hero} />}
   <div class='container my-5'>
-    <a href='/news' class='link-secondary'>News</a>
-
-    {
-      hero && (
-        <div class='hero'>
-          <h1>{hero.title}</h1>
-          <p>{hero.text}</p>
-        </div>
-      )
-    }
     <div class='section'>
       <h3>News</h3>
-      {
-        allNews.map((item) => {
-          return <div>{item.data.title}</div>;
-        })
-      }
+
+      <div class=''>
+        <div class='row'>
+          {
+            allNews.map((item) => (
+              <div class='col'>
+                <ImgCard {...item.data} />
+              </div>
+            ))
+          }
+        </div>
+      </div>
     </div>
+
     <div class='section'>
       <h3>Events</h3>
-      {
-        allEvents.map((item) => {
-          return <CardHorizontal {...item.data} />;
-        })
-      }
+      <div class='row'>
+        {
+          allEvents.map((item) => (
+            <div class='row'>
+              <CardHorizontal {...item.data} />
+            </div>
+          ))
+        }
+      </div>
     </div>
     <div class='section'>
       <h3>Works</h3>
-      {
-        allWorks.map((item) => {
-          return <ImgCard {...item.data} />;
-        })
-      }
-    </div>
-    <div class='section'>
-      <h3>News</h3>
-      {
-        allNews.map((item) => {
-          return <div>{item.data.title}</div>;
-        })
-      }
-    </div>
-    <div class='section'>
-      <PageBlocks blocks={blocks} links={links} />
+      <div class=''>
+        <div class='row'>
+          {
+            allWorks.map((item) => (
+              <div class='col'>
+                <ImgCard {...item.data} />
+              </div>
+            ))
+          }
+        </div>
+      </div>
+      <div class='section'>
+        <PageBlocks blocks={blocks} links={links} />
+      </div>
     </div>
   </div>
 </Layout>
