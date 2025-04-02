@@ -1,0 +1,36 @@
+---
+const { image, title, text, action } = Astro.props;
+---
+
+<section class='it-hero-wrapper it-dark it-overlay'>
+  <!-- - img-->
+  <div class='img-responsive-wrapper'>
+    <div class='img-responsive'>
+      <div class='img-wrapper'>
+        <img src={image.url} alt={image.alt} />
+      </div>
+    </div>
+  </div>
+  <!-- - texts-->
+  <div class='container'>
+    <div class='row'>
+      <div class='col-12'>
+        <div class='it-hero-text-wrapper bg-dark'>
+          <h2>{title}</h2>
+          <p class='d-none d-lg-block'>
+            {text}
+          </p>
+          {
+            action && (
+              <div class='it-btn-container'>
+                <a class='btn btn-sm btn-secondary' href={action.link}>
+                  {action.text}
+                </a>
+              </div>
+            )
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

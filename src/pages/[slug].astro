@@ -1,6 +1,7 @@
 ---
-import Layout from "../layouts/Layout.astro";
 import { getCollection } from "astro:content";
+import Layout from "../layouts/Layout.astro";
+import PageBlocks from "../components/PageBlocks.astro";
 
 export async function getStaticPaths() {
   const pages = await getCollection("pages");
@@ -21,46 +22,15 @@ export async function getStaticPaths() {
 
 // const { slug } = Astro.params;
 const { page } = Astro.props;
-const links = page.data.blocks.filter((b: any) => b.linked);
+
+const blocks = page.data.blocks;
+const links = blocks.filter((b: any) => b.linked);
 ---
 
 <Layout>
   <div class='container my-5'>
     <h1>{page.data.title}</h1>
-    <div>
-      <div class='border-bottom border-2 border-secondary'>
-        {
-          links.map((b: any) => (
-            <span class='mx-2 text-secondary'>
-              <a href={`#${b.link || b.title.split(" ").join("_")}`}>
-                {b.title}
-              </a>
-            </span>
-          ))
-        }
-      </div>
-      <div>
-        {
-          page.data.blocks.map((b: any) => {
-            switch (b.type) {
-              case "section":
-                return (
-                  <div class='paragraph my-4'>
-                    {b.linked && (
-                      <a id={`${b.link || b.title.split(" ").join("_")}`} />
-                    )}
-                    {b.title && <h3>{b.title}</h3>}
-                    <div set:text={b.body} />
-                  </div>
-                );
-              default:
-                break;
-            }
-            return <div>{b.type}</div>;
-          })
-        }
-      </div>
-      <small>updated on: {page.data.date}</small>
-    </div>
+    <PageBlocks blocks={blocks} links={links} />
+    <small>updated on: {page.data.date}</small>
   </div>
 </Layout>

@@ -1,6 +1,9 @@
 ---
 import { getCollection } from "astro:content";
 import Layout from "../layouts/Layout.astro";
+import PageBlocks from "../components/PageBlocks.astro";
+import CardHorizontal from "../components/CardHorizontal.astro";
+import ImgCard from "../components/ImgCard.astro";
 
 // Get all entries from a collection.
 // Requires the name of the collection as an argument.
@@ -8,47 +11,59 @@ const allNews = await getCollection("news");
 const allEvents = await getCollection("events");
 const allWorks = await getCollection("works");
 const allPages = await getCollection("pages");
+const home = allPages.find((i) => i.id === "home");
 
+const hero = home?.data.blocks.find((b: any) => b.type === "hero");
+const blocks = home?.data.blocks.filter((b: any) => b.type !== "hero");
+const links = blocks?.filter((b: any) => b.linked);
 ---
 
 <Layout>
   <div class='container my-5'>
+    <a href='/news' class='link-secondary'>News</a>
 
-    <a href="/news" class="link-secondary">News</a>
-    <div class="bg-secondary text-white p-3">
-      this is a box
-    </div>
+    {
+      hero && (
+        <div class='hero'>
+          <h1>{hero.title}</h1>
+          <p>{hero.text}</p>
+        </div>
+      )
+    }
+    <div class='section'>
       <h3>News</h3>
       {
         allNews.map((item) => {
           return <div>{item.data.title}</div>;
         })
       }
-    <h3>Events</h3>
-    {
-      allEvents.map((item) => {
-        return <div>{item.data.title}</div>;
-      })
-    }
-    <h3>Works</h3>
-    {
-      allWorks.map((item) => {
-        return <div>
-					<img src={item.data.image.url} alt={item.data.image.alt} height=200/>
-					{item.data.title}</div>;
-      })
-    }
-    <h3>News</h3>
-    {
-      allNews.map((item) => {
-        return <div>{item.data.title}</div>;
-      })
-    }
-    <h3>Pages</h3>
-    {
-      allPages.map((item) => {
-        return <div>{JSON.stringify(item)}</div>;
-      })
-    }
+    </div>
+    <div class='section'>
+      <h3>Events</h3>
+      {
+        allEvents.map((item) => {
+          return <CardHorizontal {...item.data} />;
+        })
+      }
+    </div>
+    <div class='section'>
+      <h3>Works</h3>
+      {
+        allWorks.map((item) => {
+          return <ImgCard {...item.data} />;
+        })
+      }
+    </div>
+    <div class='section'>
+      <h3>News</h3>
+      {
+        allNews.map((item) => {
+          return <div>{item.data.title}</div>;
+        })
+      }
+    </div>
+    <div class='section'>
+      <PageBlocks blocks={blocks} links={links} />
+    </div>
   </div>
 </Layout>

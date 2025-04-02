@@ -76,6 +76,13 @@ collections:
     format: "frontmatter"
     create: true # Allow users to create new documents in this collection
     fields: # The fields for each document, usually in frontmatter
+      - label: "Image"
+        name: "image"
+        widget: "object"
+        required: false
+        fields:
+            - { label: "Url", name: "url", widget: "image" }
+            - { label: "Alt", name: "alt", widget: string, default: "thumb" }
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Description", name: "description",  default: "" }
       - { label: "Start Date", name: "from", widget: "datetime", required: false }

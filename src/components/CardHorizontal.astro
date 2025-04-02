@@ -1,0 +1,36 @@
+---
+const props = Astro.props;
+console.log(props);
+const { image, title, text, date, link } = props;
+---
+
+<div class='card mb-3' style='max-width: 640px;'>
+  <div class='row g-0'>
+    <div class='col-md-6'>
+      {
+        image && (
+          <img
+            class='img-fluid rounded-start'
+            src={image.url}
+            alt={image.alt}
+          />
+        )
+      }
+      <div class='col-md-6'>
+        <div class='card-body'>
+          <h5 class='card-title'>{title}</h5>
+          <p class='card-text'>
+            <small class='text-body-secondary'>{date}</small>
+          </p>
+          <p class='card-text'>
+            {text}
+          </p>
+          <a class='read-more' href='#'>
+            <span class='text'>Leggi di più</span>
+            <svg class='icon'><use href={link}></use></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
