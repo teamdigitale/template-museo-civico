@@ -1,0 +1,28 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+import BreadCrumbs from "../../components/BreadCrumbs.astro";
+import CardEvent from "../../components/CardEvent.astro";
+
+const items = await getCollection("events");
+---
+
+<Layout>
+  <div class='container my-2'>
+    <BreadCrumbs path={["events"]} />
+  </div>
+  <div class='container contents'>
+    <div class='mt-5'>
+      <div class='row'>
+        {
+          items.map((item) => (
+            <div class='row my-2'>
+              <CardEvent {...item.data} slug={item.id} />
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+  <!-- <pre>{JSON.stringify(item,null,2)}</pre> -->
+</Layout>
