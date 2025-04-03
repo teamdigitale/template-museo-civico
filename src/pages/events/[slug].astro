@@ -45,7 +45,7 @@ console.log("item", item);
       <small>to: {item.data.from}</small>
     </div>
     <div class='mb-4'>
-      {item.data.tags.map((tag: string) => <span class='tag'>{tag}</span>)}
+      {item.data.tags?.map((tag: string) => <span class='tag'>{tag}</span>)}
     </div>
 
     <p>{item.data.description}</p>
