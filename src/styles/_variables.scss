@@ -10,7 +10,10 @@ $color-text-primary-active: hsl(0, 0%, 20%);
 $color-text-accent: #7d2670;
 $color-text-secondary: #2f475e;
 
+
 $secondary: #7d2670;
+$tag-bg-color: #F6EFF5;
+$hero-bg-color: #FBF9FB;
 
 @mixin multiline-ellipsis($lines: 3) {
   display: -webkit-box;

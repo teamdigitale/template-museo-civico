@@ -30,7 +30,7 @@ const nav = data.nav;
                   >
                   <span>ITA</span>
                   <svg class='icon d-none d-lg-block'
-                    ><use href='icons/sprites.svg#it-expand'></use></svg
+                    ><use href='/icons/sprites.svg#it-expand'></use></svg
                   >
                 </a>
                 <div class='dropdown-menu'>
@@ -80,7 +80,7 @@ const nav = data.nav;
                       <img src={seo.logo} />
                     ) : (
                       <svg class='icon' aria-hidden='true'>
-                        <use href='icons/sprites.svg#it-pa' />
+                        <use href='/icons/sprites.svg#it-pa' />
                       </svg>
                     )
                   }
@@ -101,7 +101,7 @@ const nav = data.nav;
                         <li>
                           <a href={s.url} aria-label={s.title} target='_blank'>
                             <svg class='icon'>
-                              <use href={`icons/sprites.svg#it-${s.title}`} />
+                              <use href={`/icons/sprites.svg#it-${s.title}`} />
                             </svg>
                           </a>
                         </li>
@@ -117,7 +117,7 @@ const nav = data.nav;
                     href='#'
                   >
                     <svg class='icon'
-                      ><use href='icons/sprites.svg#it-search'></use></svg
+                      ><use href='/icons/sprites.svg#it-search'></use></svg
                     >
                   </a>
                 </div>}
@@ -146,7 +146,7 @@ const nav = data.nav;
                 data-bs-target='#navC1'
               >
                 <svg class='icon'>
-                  <use href='icons/sprites.svg#it-burger'></use>
+                  <use href='/icons/sprites.svg#it-burger'></use>
                 </svg>
               </button>
               <div class='navbar-collapsable' id='navC1' style='display: none;'>
@@ -155,7 +155,7 @@ const nav = data.nav;
                   <button class='btn close-menu' type='button'>
                     <span class='visually-hidden'>Nascondi la navigazione</span>
                     <svg class='icon'>
-                      <use href='icons/sprites.svg#it-close-big'></use>
+                      <use href='/icons/sprites.svg#it-close-big'></use>
                     </svg>
                   </button>
                 </div>
@@ -182,7 +182,7 @@ const nav = data.nav;
                                   >
                                     <span>{item.title}</span>
                                     <svg class='icon icon-xs'>
-                                      <use href='icons/sprites.svg#it-expand' />
+                                      <use href='/icons/sprites.svg#it-expand' />
                                     </svg>
                                   </a>
                                   <div
@@ -238,7 +238,7 @@ const nav = data.nav;
                                     <>
                                       <span>{item.title}</span>
                                       <svg role='img' class='icon icon-xs ms-1'>
-                                        <use href='icons/sprites.svg#it-expand' />
+                                        <use href='/icons/sprites.svg#it-expand' />
                                       </svg>
                                     </>
                                   </button>
@@ -261,13 +261,13 @@ const nav = data.nav;
                                                       <li>
                                                         <a
                                                           class='list-item dropdown-item'
-                                                          href={link.url}
+                                                          href={link.link}
                                                         >
                                                           <svg
                                                             role='img'
                                                             class='icon icon-sm me-2'
                                                           >
-                                                            <use href='icons/sprites.svg#it-arrow-right-triangle' />
+                                                            <use href='/icons/sprites.svg#it-arrow-right-triangle' />
                                                           </svg>
                                                           <span>
                                                             {link.title}
