@@ -1,18 +1,24 @@
 ---
 const { blocks, links } = Astro.props;
 ---
-
-<div>
-  <div class='border-bottom border-2 border-secondary'>
-    {
-      links.map((b: any) => (
-        <span class='mx-2 text-secondary'>
-          <a href={`#${b.link || b.title.split(" ").join("_")}`}>{b.title}</a>
-        </span>
-      ))
-    }
-  </div>
+<!--
+<div class='border-bottom border-2 border-secondary'>
+  {links.map((b: any) => (<span class='mx-2 text-secondary'><a href={`#${b.link || b.title.split(" ").join("_")}`}>{b.title}</a></span>))}
+</div>
+-->
+<div class="wrap">
+  <div class="menu-wrap">
+    <h3>Indice pagina</h3>
+    <ul class="link-list">
+    {links?.map((b: any) =>  (
+      <li class="nav-item">
+        <a class="nav-link" href={`#${b.link || b.title.split(" ").join("_")}`}>
+          <span>{b.title}</span>
+        </a>
+      </li>))}
+    </ul>
   <div>
+  <div class="content-wrap">
     {
       blocks.map((b: any) => {
         switch (b.type) {
@@ -34,3 +40,30 @@ const { blocks, links } = Astro.props;
     }
   </div>
 </div>
+<style>
+
+  .menu-wrap{
+    background-color: pink;
+    position: relative;
+    display: block;
+
+  }
+  .content-wrap{
+    background-color: blue;
+    position: relative;
+    display: block;
+  }
+
+  .wrap{
+    width:100%;
+    display: flex;
+    background-color: red;
+    position: relative;
+  }
+
+  @media (min-width: 20em){
+    .wrap{
+      flex-direction: column;
+    }
+  }
+</style>

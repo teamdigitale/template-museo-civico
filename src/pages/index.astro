@@ -25,9 +25,26 @@ console.log("hero", hero);
 <Layout>
   {hero && <Hero {...hero} />}
 
-  <div class="container my-5">
+
+  <div class="bg-gray">
+   <div class="container my-5 ">
+    <div class="my-5 ">
+      <h3>In evidenza</h3>
+      <div class="row gap-4 mt-5">
+        {
+          allEvents.map((item) => (
+            <div>
+              <CardHorizontal {...item.data} slug={item.id} />
+            </div>
+          ))
+        }
+      </div>
+    </div>
+    </div>
+</div>
+<div class="container my-5">
     <div>
-      <h3>Le ultime notizie del Museo</h3>
+      <h3>Le ultime notizie</h3>
       <div class="mt-5">
         <div class="row row-cols-1 row-cols-lg-3 gx-lg-5 gy-5">
           {
@@ -40,19 +57,8 @@ console.log("hero", hero);
         </div>
       </div>
     </div>
-
-    <div class="my-5">
-      <h3>Events</h3>
-      <div class="row gap-4 mt-5">
-        {
-          allEvents.map((item) => (
-            <div>
-              <CardHorizontal {...item.data} slug={item.id} />
-            </div>
-          ))
-        }
-      </div>
-    </div>
+  </div>
+ <div class="container my-5 ">
     <div class="my-5">
       <h3>Works</h3>
       <div class="">
@@ -72,3 +78,10 @@ console.log("hero", hero);
     </div>
   </div>
 </Layout>
+<style>
+  .bg-gray{
+    background-color: #fbf9fb;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+</style>
