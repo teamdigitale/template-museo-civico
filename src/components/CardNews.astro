@@ -5,7 +5,28 @@ const { image, title, link, alt, description, pubDate, slug } = props;
 const date = new Date(pubDate);
 ---
 
-<div class='card-wrapper shadow rounded overflow-hidden h-100'>
+<style lang="scss">
+  @import "../styles/variables";
+
+  .card-news-wrapper {
+    padding: 0;
+  }
+
+  .card {
+    --bs-card-bg: white;
+    --bs-link-color: #{$color-text-accent};
+
+    .card-description {
+      color: #{$color-text-secondary};
+      font-weight: 400;
+      font-size: 1.125rem;
+      line-height: 1.75rem; 
+      letter-spacing: 0;    
+    }
+  }
+</style>
+
+<div class='card-wrapper card-news-wrapper shadow rounded overflow-hidden h-100'>
   <div class='card card-img no-after'>
     {
       image && (
@@ -23,9 +44,9 @@ const date = new Date(pubDate);
     <div class='card-body d-flex flex-column justify-content-between'>
       <div>
         <a href={`/news/${slug}`}
-          ><h4 class='card-title h4 multiline-ellipsis'>{title}</h4></a
+          ><h4 class='card-title h4 multiline-ellipsis-2'>{title}</h4></a
         >
-        <p class='card-description font-serif multiline-ellipsis'>
+        <p class='card-description font-serif multiline-ellipsis-7'>
           {description}
         </p>
       </div>

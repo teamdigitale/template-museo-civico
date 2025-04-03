@@ -1,31 +1,83 @@
 ---
 const props = Astro.props;
-const { image, title, text, date, slug } = props;
+const { image, title, description, from, to, slug } = props;
+
+const fromDate = from
+  ? new Date(from).toLocaleDateString("it-IT", {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    })
+  : null;
+
+const toDate = to
+  ? new Date(to).toLocaleDateString("it-IT", {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    })
+  : null;
+
+const fromTime = from
+  ? new Date(from).toLocaleTimeString("it-IT", {
+      hour: "2-digit",
+      minute: "2-digit",
+    })
+  : null;
 ---
 
-<div class='card no-after mb-3 shadow'>
-  <div class='row'>
-    <div class='col-md-6'>
+<style lang="scss">
+  @import "../styles/variables";
+
+  .card-event {
+    --bs-link-color: #{$color-text-accent};
+  }
+
+  .card-date {
+    color: #{$color-text-secondary};
+  }
+
+  .card-description {
+    color: #{$color-text-secondary};
+    font-weight: 400;
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+    letter-spacing: 0;
+  }
+
+</style>
+<div class="card card-event no-after shadow rounded overflow-hidden">
+  <div class="row">
+    <div class="col-md-6">
       {
         image && (
-          <img
-            class='img-fluid rounded-start'
-            src={image.url}
-            alt={image.alt}
-          />
+          <div class="img-responsive-wrapper ratio ratio-16x9 h-100">
+            <figure>
+              <img
+                src={image.url}
+                alt={image.alt}
+                class="w-100 h-100 object-fit-cover"
+              />
+            </figure>
+          </div>
         )
       }
     </div>
-    <div class='col-md-6'>
-      <div class='card-body'>
-        <a class='read-more' href={`/events/${slug}`}>
-          <h5 class='card-title'>{title}</h5>
+    <div class="col-md-6">
+      <div class="card-body">
+        <a href={`/events/${slug}`}>
+          <h3 class="card-title mb-2">{title}</h3>
         </a>
-        <p class='card-text'>
-          <small class='text-body-secondary'>{date}</small>
-        </p>
-        <p class='card-text'>
-          {text}
+        <h4 class="card-date fw-semibold">
+          {
+            fromDate &&
+              (toDate
+                ? `Dal ${fromDate} al ${toDate}`
+                : `Il ${fromDate}, ore ${fromTime}`)
+          }
+        </h4>
+        <p class="card-description multiline-ellipsis-5 mt-3">
+          {description}
         </p>
       </div>
     </div>

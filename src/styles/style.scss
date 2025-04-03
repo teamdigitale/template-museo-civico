@@ -1,56 +1,5 @@
-$primary-h: 0;
-$primary-s: 0;
-$primary-b: 20;
-
-$primary: #333;
-$header-slim-bg-color: #262626;
-
-$color-text-primary-hover: hsl(0, 0%, 20%);
-$color-text-primary-active: hsl(0, 0%, 20%);
-
-$secondary: #7d2670;
-
+@import "variables";
 @import "bootstrap-italia/src/scss/bootstrap-italia";
-
-$color-text-accent: #7d2670;
-$color-text-secondary: #2F475E;
-
-.card-wrapper {
-  padding-bottom: 0;
-}
-
-.card {
-  --bs-card-color: #{$color-text-accent};
-  --bs-card-bg: white;
-
-  .card-body .card-text {
-    color: $color-text-secondary;
-  }
-
-  .card-description {
-    color: $color-text-secondary;
-    font-weight: 400;
-    font-size: 1.125rem;
-    line-height: 1.75rem; 
-    letter-spacing: 0;    
-  }
-
-  .card-title.multiline-ellipsis {
-    display: -webkit-box;
-    line-clamp: 2;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-  }
-
-  .card-text.multiline-ellipsis {
-    display: -webkit-box;
-    line-clamp: 7;
-    -webkit-line-clamp: 7;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-  }
-}
 
 .object-fit-cover {
   object-fit: cover;
@@ -61,8 +10,4 @@ $color-text-secondary: #2F475E;
 }
 .it-footer-small-prints{
   background-color: #262626!important;
-}
-
-.col-min-w-300 {
-  min-width: 300px;
 }
