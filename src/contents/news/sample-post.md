@@ -1,12 +1,17 @@
 ---
-title: "My First Blog Post"
-pubDate: 2022-07-01
-description: "This is the first post of my new Astro blog."
-author: "Astro Learner"
 image:
-  url: "https://docs.astro.build/assets/rose.webp"
-  alt: "The Astro logo on a dark background with a pink glow."
-tags: ["news", "museum"]
+  url: https://docs.astro.build/assets/rose.webp
+  alt: The Astro logo on a dark background with a pink glow.
+title: È iniziato il restauro della tela “Il binario”
+description: L'inizio del restauro della tela "Il binario" segna un momento
+  cruciale nella conservazione del nostro patrimonio artistico. Questo affresco
+  iconico, intriso di storia e significato, sarà riportato al suo antico
+  splendore grazie all'abilità e alla dedizione dei nostri restauratori esperti.
+pubDate: 2022-07-01
+author: Astro Learner
+tags:
+  - news
+  - museum
 ---
 
 Welcome to my _new blog_ about learning Astro! Here, I will share my learning journey as I build a new website.

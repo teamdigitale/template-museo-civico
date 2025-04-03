@@ -5,6 +5,7 @@ import PageBlocks from "../components/PageBlocks.astro";
 import CardHorizontal from "../components/CardHorizontal.astro";
 import ImgCard from "../components/ImgCard.astro";
 import Hero from "../components/Hero.astro";
+import CardNews from "../components/CardNews.astro";
 
 // Get all entries from a collection.
 // Requires the name of the collection as an argument.
@@ -24,15 +25,15 @@ console.log("hero", hero);
 <Layout>
   {hero && <Hero {...hero} />}
   <div class='container my-5'>
-    <div class='section'>
-      <h3>News</h3>
+    <div>
+      <h3>Le ultime notizie del Museo</h3>
 
-      <div class=''>
-        <div class='row'>
+      <div class='mt-5'>
+        <div class='row row-cols-1 row-cols-lg-3 gx-lg-5 gy-5'>
           {
             allNews.map((item) => (
               <div class='col'>
-                <ImgCard {...item.data} />
+                <CardNews {...item.data} />
               </div>
             ))
           }
@@ -40,7 +41,7 @@ console.log("hero", hero);
       </div>
     </div>
 
-    <div class='section'>
+    <div class='my-5'>
       <h3>Events</h3>
       <div class='row'>
         {
@@ -52,7 +53,7 @@ console.log("hero", hero);
         }
       </div>
     </div>
-    <div class='section'>
+    <div class='my-5'>
       <h3>Works</h3>
       <div class=''>
         <div class='row'>
@@ -65,7 +66,7 @@ console.log("hero", hero);
           }
         </div>
       </div>
-      <div class='section'>
+      <div class='my-5'>
         <PageBlocks blocks={blocks} links={links} />
       </div>
     </div>

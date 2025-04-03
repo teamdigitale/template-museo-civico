@@ -1,12 +1,17 @@
 ---
-title: "MC Online"
-pubDate: 2024-07-01
-description: "This is a sample of news."
-author: "Don Noun"
 image:
-  url: "https://docs.astro.build/assets/rose.webp"
-  alt: "The Astro logo on a dark background with a pink glow."
-tags: ["news", "museum"]
+  url: https://docs.astro.build/assets/rose.webp
+  alt: The Astro logo on a dark background with a pink glow.
+title: Nuovo direttore per la sezione Archiettura urbana
+description: Il nostro museo d'arte accoglie con entusiasmo il nuovo direttore
+  Alessandro Bertazzani per la sezione di Architettura urbana, portatore di una
+  visione innovativa e un profondo impegno nel celebrare il connubio tra arte e
+  ambiente urbano.
+pubDate: 2024-07-01
+author: Don Noun
+tags:
+  - news
+  - museum
 ---
 
 ## Lorem ipsum dolor
