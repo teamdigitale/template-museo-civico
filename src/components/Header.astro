@@ -7,7 +7,7 @@ console.log("nav", nav);
 ---
 
 <header class='it-header-wrapper'>
-  <div class='it-header-slim-wrapper'>
+  {false && <div class='it-header-slim-wrapper'>
     <div class='container-xxl'>
       <div class='row'>
         <div class='col-12'>
@@ -15,32 +15,7 @@ console.log("nav", nav);
             <a class='d-none d-lg-block navbar-brand' href='#'
               >Ente appartenenza</a
             >
-            <!-- <div class='nav-mobile'>
-              <nav aria-label='Navigazione secondaria'>
-                <a
-                  class='it-opener d-lg-none'
-                  data-bs-toggle='collapse'
-                  href='#menuC1'
-                  role='button'
-                  aria-expanded='false'
-                  aria-controls='menuC1'
-                >
-                  <span>Ente appartenenza</span>
-                  <svg class='icon' aria-hidden='true'
-                    ><use href='icons/sprites.svg#it-expand'></use></svg
-                  >
-                </a>
-                <div class='link-list-wrapper collapse' id='menuC1'>
-                  <ul class='link-list'>
-                    <li>
-                      <a class='dropdown-item list-item active' href='/musei'
-                        >Musei</a
-                      >
-                    </li>
-                  </ul>
-                </div>
-              </nav>
-            </div> -->
+
             <div class='it-header-slim-right-zone'>
               <div class='nav-item dropdown'>
                 <a
@@ -91,7 +66,7 @@ console.log("nav", nav);
         </div>
       </div>
     </div>
-  </div>
+  </div>}
   <div class='it-nav-wrapper'>
     <div class='it-header-center-wrapper'>
       <div class='container-xxl'>
@@ -134,7 +109,7 @@ console.log("nav", nav);
                     }
                   </ul>
                 </div>
-                <!-- <div class='it-search-wrapper'>
+              {false &&     <div class='it-search-wrapper'>
                   <span class='d-none d-md-block'>Cerca</span>
                   <a
                     class='search-link rounded-icon'
@@ -145,7 +120,7 @@ console.log("nav", nav);
                       ><use href='icons/sprites.svg#it-search'></use></svg
                     >
                   </a>
-                </div> -->
+                </div>}
               </div>
             </div>
           </div>
@@ -190,8 +165,8 @@ console.log("nav", nav);
                       nav?.map(
                         (item: {
                           title: string;
-                          url: string;
-                          childs?: [{ title: string; url: string }];
+                          link: string;
+                          childs?: [{ title: string; link: string }];
                         }) => {
                           if (item.childs) {
                             if (item.childs.length < 4) {
@@ -220,12 +195,12 @@ console.log("nav", nav);
                                         {item.childs.map(
                                           (child: {
                                             title: string;
-                                            url: string;
+                                            link: string;
                                           }) => (
                                             <li>
                                               <a
                                                 class='dropdown-item list-item'
-                                                href={child.url}
+                                                href={child.link}
                                               >
                                                 <span>{child.title}</span>
                                               </a>
@@ -313,9 +288,10 @@ console.log("nav", nav);
                               );
                             }
                           }
+                          console.log("item", item);
                           return (
                             <li class='nav-item'>
-                              <a class='nav-link' href={item.url}>
+                              <a class='nav-link' href={item.link}>
                                 <span>{item.title}</span>
                               </a>
                             </li>

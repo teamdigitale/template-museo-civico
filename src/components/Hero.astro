@@ -4,9 +4,9 @@ console.log("hero", props);
 const { image, title, text, action } = props;
 ---
 
-<section class='it-hero-wrapper it-dark it-overlay'>
+<section class='myhero'>
   <!-- - img-->
-  <div class='img-responsive-wrapper'>
+  <div class='bg-img img-responsive-wrapper'>
     <div class='img-responsive'>
       <div class='img-wrapper'>
         <img src={image} alt={title} />
@@ -17,23 +17,60 @@ const { image, title, text, action } = props;
   <div class='container'>
     <div class='row'>
       <div class='col-12'>
-        <div class='it-hero-text-wrapper bg-dark'>
-          <h2>{title}</h2>
+        <div class='mx-auto'>
+          <h1>{title}</h1>
           <p class='d-none d-lg-block'>
             {text}
           </p>
-
-          {
-            action && (
-              <div class='it-btn-container'>
-                <a class='btn btn-sm btn-secondary' href={action.link}>
-                  {action.text}
-                </a>
-              </div>
-            )
-          }
         </div>
       </div>
     </div>
   </div>
+  <!-- - overlay-->
+  <div class='bg-overlay'></div>
 </section>
+<style>
+  .myhero {
+    position: relative;
+    width: 100%;
+    height: 60vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .myhero h1 {
+    font-size: 3rem;
+    color: white;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  .myhero p {
+    font-size: 1.2rem;
+    color: white;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  .myhero .container {
+    position: relative;
+    z-index: 1;
+  }
+  .myhero .bg-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+  .myhero .bg-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(125, 38, 112, 0.5);
+    z-index: 0;
+  }
+</style>
