@@ -2,8 +2,8 @@
 import { getCollection } from "astro:content";
 import Layout from "../layouts/Layout.astro";
 import PageBlocks from "../components/PageBlocks.astro";
-import CardHorizontal from "../components/CardHorizontal.astro";
-import ImgCard from "../components/ImgCard.astro";
+import CardHorizontal from "../components/CardEvent.astro";
+import ImgCard from "../components/CardWork.astro";
 import Hero from "../components/Hero.astro";
 import CardNews from "../components/CardNews.astro";
 
@@ -34,7 +34,7 @@ console.log("hero", hero);
           {
             allNews.map((item) => (
               <div class='col'>
-                <CardNews {...item.data} />
+                <CardNews {...item.data} slug={item.id} />
               </div>
             ))
           }
@@ -48,7 +48,7 @@ console.log("hero", hero);
         {
           allEvents.map((item) => (
             <div class='row'>
-              <CardHorizontal {...item.data} />
+              <CardHorizontal {...item.data} slug={item.id} />
             </div>
           ))
         }
@@ -61,7 +61,7 @@ console.log("hero", hero);
           {
             allWorks.map((item) => (
               <div class='col'>
-                <ImgCard {...item.data} />
+                <ImgCard {...item.data} slug={item.id} />
               </div>
             ))
           }

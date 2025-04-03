@@ -1,7 +1,7 @@
 ---
 const props = Astro.props;
 // console.log("card img", props);
-const { image, title, link, alt, description, pubDate } = props;
+const { image, title, link, alt, description, pubDate, slug } = props;
 const date = new Date(pubDate);
 ---
 
@@ -11,20 +11,32 @@ const date = new Date(pubDate);
       image && (
         <div class='img-responsive-wrapper ratio ratio-21x9'>
           <figure>
-            <img src={image.url} alt={alt} class="w-100 h-100 object-fit-cover" />
+            <img
+              src={image.url}
+              alt={alt}
+              class='w-100 h-100 object-fit-cover'
+            />
           </figure>
         </div>
       )
     }
     <div class='card-body d-flex flex-column justify-content-between'>
       <div>
-        <h4 class='card-title h4 multiline-ellipsis'>{title}</h4>
+        <a href={`/news/${slug}`}
+          ><h4 class='card-title h4 multiline-ellipsis'>{title}</h4></a
+        >
         <p class='card-description font-serif multiline-ellipsis'>
           {description}
         </p>
       </div>
       <span class='font-monospace small fw-normal text-muted mt-4 text-end'>
-        {date.toLocaleDateString('it-IT', { day: 'numeric', month: 'long', year: 'numeric' })}
+        {
+          date.toLocaleDateString("it-IT", {
+            day: "numeric",
+            month: "long",
+            year: "numeric",
+          })
+        }
       </span>
     </div>
   </div>

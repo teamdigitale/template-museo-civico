@@ -1,7 +1,7 @@
 ---
 const props = Astro.props;
 // console.log("card img", props);
-const { image, title, link, alt } = props;
+const { image, title, link, alt, slug } = props;
 ---
 
 <div class='card-wrapper'>
@@ -21,7 +21,7 @@ const { image, title, link, alt } = props;
       <h3 class='card-title h5'>
         {title}
         <p class='card-text font-serif'></p>
-        <a class='read-more' href='#'>
+        <a class='read-more' href={`/works/${slug}`}>
           <span class='text'>Leggi di più</span>
           <svg class='icon'><use href={link}></use></svg>
         </a>
