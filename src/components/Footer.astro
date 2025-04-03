@@ -1,3 +1,33 @@
+---
+const props = Astro.props;
+console.log("footer", props);
+const { socials, seo } = props;
+const rows = props.data[0].rows;
+const subFooter = [
+  {
+    title: "Media policy",
+    url: "/policy#media-policy",
+    isExternal: false,
+  },
+  {
+    title: "Privacy policy",
+    url: "/policy#privacy-policy",
+    isExternal: false,
+  },
+  {
+    title: "Note legali",
+    url: "/policy#legal-notes",
+    isExternal: false,
+  },
+
+  {
+    title: "Dichiarazione di accessibilità ",
+    url: "https://form.agid.gov.it/view/xyz",
+    isExternal: true,
+  },
+];
+---
+
 <footer class='it-footer'>
   <div class='it-footer-main'>
     <div class='container'>
@@ -6,169 +36,88 @@
           <div class='col-sm-12'>
             <div class='it-brand-wrapper'>
               <a href='#' data-focus-mouse='false'>
-                <svg class='icon'
-                  ><use xlink:href='icons/sprites.svg#it-code-circle'
-                  ></use></svg
-                >
+                {
+                  seo?.logo ? (
+                    <img src={seo.logo} />
+                  ) : (
+                    <svg class='icon' aria-hidden='true'>
+                      <use href='icons/sprites.svg#it-pa' />
+                    </svg>
+                  )
+                }
                 <div class='it-brand-text'>
-                  <h2>Lorem Ipsum</h2>
-                  <h3 class='d-none d-md-block'>Inserire qui la tag line</h3>
+                  <h2>{seo.title}</h2>
+                  <h3 class='d-none d-md-block'>{seo.subtitle}</h3>
                 </div>
               </a>
             </div>
           </div>
         </div>
       </section>
-      <section>
-        <div class='row'>
-          <div class='col-lg-3 col-md-3 col-sm-6 pb-2'>
-            <h4>
-              <a href='#' title='Vai alla pagina: Amministrazione'
-                >Amministrazione</a
-              >
-            </h4>
-            <div class='link-list-wrapper'>
-              <ul class='footer-list link-list clearfix'>
-                <li>
-                  <a class='list-item' href='#'>Giunta e consiglio</a>
-                </li>
-                <li>
-                  <a class='list-item' href='#'>Aree di competenza</a>
-                </li>
-                <li><a class='list-item' href='#'>Dipendenti</a></li>
-                <li><a class='list-item' href='#'>Luoghi</a></li>
-                <li>
-                  <a class='list-item' href='#'
-                    >Associazioni e società partecipate</a
-                  >
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class='col-lg-3 col-md-3 col-sm-6 pb-2'>
-            <h4>
-              <a href='#' title='Vai alla pagina: Servizi'>Servizi</a>
-            </h4>
-            <div class='link-list-wrapper'>
-              <ul class='footer-list link-list clearfix'>
-                <li><a class='list-item' href='#'>Pagamenti</a></li>
-                <li><a class='list-item' href='#'>Sostegno</a></li>
-                <li>
-                  <a class='list-item' href='#'>Domande e iscrizioni</a>
-                </li>
-                <li><a class='list-item' href='#'>Segnalazioni</a></li>
-                <li>
-                  <a class='list-item' href='#'>Autorizzazioni e concessioni</a>
-                </li>
-                <li>
-                  <a class='list-item' href='#'>Certificati e dichiarazioni</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class='col-lg-3 col-md-3 col-sm-6 pb-2'>
-            <h4>
-              <a href='#' title='Vai alla pagina: Novità'>Novità</a>
-            </h4>
-            <div class='link-list-wrapper'>
-              <ul class='footer-list link-list clearfix'>
-                <li><a class='list-item' href='#'>Notizie</a></li>
-                <li><a class='list-item' href='#'>Eventi</a></li>
-                <li><a class='list-item' href='#'>Comunicati stampa</a></li>
-              </ul>
-            </div>
-          </div>
-          <div class='col-lg-3 col-md-3 col-sm-6'>
-            <h4>
-              <a href='#' title='Vai alla pagina: Documenti'>Documenti</a>
-            </h4>
-            <div class='link-list-wrapper'>
-              <ul class='footer-list link-list clearfix'>
-                <li>
-                  <a class='list-item' href='#'>Progetti e attività</a>
-                </li>
-                <li>
-                  <a class='list-item' href='#'
-                    >Delibere, determine e ordinanze</a
-                  >
-                </li>
-                <li><a class='list-item' href='#'>Bandi</a></li>
-                <li><a class='list-item' href='#'>Concorsi</a></li>
-                <li><a class='list-item' href='#'>Albo pretorio</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section class='py-4 border-white border-top'>
-        <div class='row'>
-          <div class='col-lg-4 col-md-4 pb-2'>
-            <h4>Contatti</h4>
-            <p>
-              <strong>Comune di Lorem Ipsum</strong><br />
-              Via Roma 0 - 00000 Lorem Ipsum Codice fiscale / P. IVA: 000000000
-            </p>
-            <div class='link-list-wrapper'>
-              <ul class='footer-list link-list clearfix'>
-                <li>
-                  <a class='list-item' href='#'>Posta Elettronica Certificata</a
-                  >
-                </li>
-                <li>
-                  <a class='list-item' href='#'
-                    >URP - Ufficio Relazioni con il Pubblico</a
-                  >
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class='col-lg-4 col-md-4 pb-2'>
-            <h4>Lorem Ipsum</h4>
-          </div>
-          <div class='col-lg-4 col-md-4 pb-2'>
-            <div class='pb-2'>
-              <h4>Seguici su</h4>
-              <ul class='list-inline text-left social'>
-                <li class='list-inline-item'>
-                  <a class='p-2 text-white' href='#'
-                    ><svg class='icon icon-sm icon-white align-top'
-                      ><use xlink:href='icons/sprites.svg#it-designers-italia'
-                      ></use></svg
-                    ><span class='visually-hidden'
-                      >Designers Italia (link esterno)</span
-                    ></a
-                  >
-                </li>
-                <li class='list-inline-item'>
-                  <a class='p-2 text-white' href='#'
-                    ><svg class='icon icon-sm icon-white align-top'
-                      ><use xlink:href='icons/sprites.svg#it-twitter'
-                      ></use></svg
-                    ><span class='visually-hidden'>X (link esterno)</span></a
-                  >
-                </li>
-                <li class='list-inline-item'>
-                  <a class='p-2 text-white' href='#'
-                    ><svg class='icon icon-sm icon-white align-top'
-                      ><use xlink:href='icons/sprites.svg#it-medium'></use></svg
-                    ><span class='visually-hidden'>Medium (link esterno)</span
-                    ></a
-                  >
-                </li>
-                <li class='list-inline-item'>
-                  <a class='p-2 text-white' href='#'
-                    ><svg class='icon icon-sm icon-white align-top'
-                      ><use xlink:href='icons/sprites.svg#it-behance'
-                      ></use></svg
-                    ><span class='visually-hidden'>Behance (link esterno)</span
-                    ></a
-                  >
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
+      {
+        rows.map((row: any, index: number) => {
+          const cn = index > 0 ? "py-4 border-white border-top" : "";
+          return (
+            <section class={cn}>
+              <row class='row'>
+                {row.sections.map((section: any) => {
+                  return (
+                    <div class='col-lg-4 col-md-4 col-sm-6 pb-2'>
+                      <h4>{section.title}</h4>
+                      {section.texts && (
+                        <p set:html={section.texts?.join("<br/>")} />
+                      )}
+                      {section.socials && (
+                        <ul class='list-inline text-left social'>
+                          {socials?.map((social: any) => {
+                            return (
+                              <li class='list-inline-item'>
+                                <a
+                                  class='p-2 text-white'
+                                  href={social.url}
+                                  target='_blank'
+                                  rel='noopener noreferrer'
+                                >
+                                  <svg
+                                    class='icon icon-sm icon-white align-top'
+                                    aria-hidden='true'
+                                  >
+                                    <use
+                                      xlink:href={`icons/sprites.svg#it-${social.title}`}
+                                    />
+                                  </svg>
+                                  <span class='visually-hidden'>
+                                    {social.title} (link esterno)
+                                  </span>
+                                </a>
+                              </li>
+                            );
+                          })}
+                        </ul>
+                      )}
+                      {section.links && (
+                        <div class='link-list-wrapper'>
+                          <ul class='footer-list link-list clearfix'>
+                            {section.links.map((link: any) => {
+                              return (
+                                <li>
+                                  <a class='list-item' href={link.url}>
+                                    {link.title}
+                                  </a>
+                                </li>
+                              );
+                            })}
+                          </ul>
+                        </div>
+                      )}
+                    </div>
+                  );
+                })}
+              </row>
+            </section>
+          );
+        })
+      }
     </div>
   </div>
   <div class='it-footer-small-prints clearfix'>
@@ -177,17 +126,20 @@
       <ul
         class='it-footer-small-prints-list list-inline mb-0 d-flex flex-column flex-md-row'
       >
-        <li class='list-inline-item'><a href='#'>Media policy</a></li>
-        <li class='list-inline-item'><a href='#'>Note legali</a></li>
-        <li class='list-inline-item'><a href='#'>Privacy policy</a></li>
-        <li class='list-inline-item'><a href='#'>Mappa del sito</a></li>
-        <li class='list-inline-item'>
-          <a href='https://form.agid.gov.it/view/xyz'
-            >Dichiarazione di accessibilità <span class='visually-hidden'
-              >(link esterno su sito AgID)</span
-            ></a
-          >
-        </li>
+        {
+          subFooter.map(({ url, title, isExternal }) => {
+            return (
+              <li class='list-inline-item'>
+                <a href={url}>
+                  {title}
+                  {isExternal && (
+                    <span class='visually-hidden'>(link esterno)</span>
+                  )}
+                </a>
+              </li>
+            );
+          })
+        }
       </ul>
     </div>
   </div>
