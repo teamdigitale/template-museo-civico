@@ -6,15 +6,13 @@ console.log("item", item);
 <style lang="scss">
   @import "../styles/variables";
 
+  .hero-detail-wrapper {
+    background-color: $hero-bg-color;
+  }
+
   .hero-detail {
     background-color: $hero-bg-color;
     padding: 0;
-  }
-
-  @media (min-width: 50em){
-    .hero-detail {
-      padding: 5rem 1rem;
-    }
   }
 
   .hero-detail-description {
@@ -49,30 +47,34 @@ console.log("item", item);
     }
   }
 </style>
-<div class="container">
-<div class="row gx-0 hero-detail">
-  <div class="order-2 order-lg-1 col-12 col-lg-6 p-4 p-lg-5 d-flex justify-content-center align-items-center">
-    <div class="">
-      <h1>{item.data.title}</h1>
-      <div class="my-4">
-        {item.data.tags?.map((tag: string) => <span class="tag">{tag}</span>)}
+<div class="hero-detail-wrapper">
+    <div class="container">
+      <div class="row gx-0 hero-detail">
+        <div
+          class="order-2 order-lg-1 col-12 col-lg-6 pt-4 pt-lg-0 pe-5 d-flex justify-content-center align-items-center"
+        >
+          <div class="">
+            <h1>{item.data.title}</h1>
+            <div class="my-4">
+              {item.data.tags?.map((tag: string) => <span class="tag">{tag}</span>)}
+            </div>
+            <p class="hero-detail-description">{item.data.description}</p>
+            <span class="share mb-5 mb-lg-0 mt-5">
+              <svg class="icon"><use href="/icons/sprites.svg#it-share"></use></svg>
+              Condividi
+            </span>
+          </div>
+          <!-- <pre>{JSON.stringify(item,null,2)}</pre> -->
+        </div>
+        <div class="order-1 order-lg-2 col-12 col-lg-6 p-0">
+          <div class="img-responsive-wrapper ratio ratio-4x3 h-100">
+            <img
+              src={item.data.image.url}
+              alt={item.data.image.alt}
+              class="w-100 h-100 object-fit-cover"
+            />
+          </div>
+        </div>
       </div>
-      <p class="hero-detail-description">{item.data.description}</p>
-      <span class="share my-5">
-        <svg class="icon"><use href="/icons/sprites.svg#it-share"></use></svg>
-        Condividi
-      </span>
     </div>
-    <!-- <pre>{JSON.stringify(item,null,2)}</pre> -->
-  </div>
-  <div class="order-1 order-lg-2 col-12 col-lg-6 p-0">
-    <div class="img-responsive-wrapper ratio ratio-4x3 h-100">
-      <img
-        src={item.data.image.url}
-        alt={item.data.image.alt}
-        class="w-100 h-100 object-fit-cover"
-      />
-    </div>
-  </div>
-</div>
 </div>
