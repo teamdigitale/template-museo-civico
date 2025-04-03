@@ -1,0 +1,18 @@
+---
+const { path } = Astro.props;
+const current =  path.length>1 ? path.slice(-1): path[0]
+---
+<style lang="scss">
+  @import "../styles/variables";
+
+  .breadcrumb-item a{
+    color: $secondary;
+  }
+</style>
+<nav class="breadcrumb-container" aria-label="Percorso di navigazione">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/">Home</a><span class="separator">/</span></li>
+    {path.slice(0,-1).map(name=> <li class="breadcrumb-item"><a href={`/${name}`}>{name}</a><span class="separator">/</span></li>)}
+    <li class="breadcrumb-item active" aria-current="page">{current}</li>
+  </ol>
+</nav>

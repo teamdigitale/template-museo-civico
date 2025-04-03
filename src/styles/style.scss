@@ -11,3 +11,41 @@
 .it-footer-small-prints{
   background-color: #262626!important;
 }
+
+.contents {
+  font-size: 1.2rem;
+  line-height: 1.5;
+  padding: 1rem;
+}
+@media (min-width: 50em) {
+  .contents {
+    padding: 4rem 1rem;
+  }
+}
+.contents img {
+  max-width: 100%;
+  height: auto;
+}
+.contents h1,
+.contents h2,
+.contents h3,
+.contents h4,
+.contents h5,
+.contents h6 {
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+.contents p {
+  margin-bottom: 1rem;
+}
+
+.tag {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  margin-right: 8px;
+  border-radius: 4px;
+  background-color: $tag-bg-color;
+  color: $color-text-secondary;
+  font-weight: 600;
+}

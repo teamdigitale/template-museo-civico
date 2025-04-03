@@ -2,6 +2,7 @@
 import { getCollection } from "astro:content";
 import Layout from "../layouts/Layout.astro";
 import PageBlocks from "../components/PageBlocks.astro";
+import BreadCrumbs from "../components/BreadCrumbs.astro";
 
 export async function getStaticPaths() {
   const pages = await getCollection("pages");
@@ -20,7 +21,7 @@ export async function getStaticPaths() {
     });
 }
 
-// const { slug } = Astro.params;
+const { slug } = Astro.params;
 const { page } = Astro.props;
 
 const blocks = page.data.blocks;
@@ -29,8 +30,9 @@ const links = blocks.filter((b: any) => b.linked);
 
 <Layout>
   <div class='container my-5'>
+    <BreadCrumbs path={[slug]}/>
     <h1>{page.data.title}</h1>
-    <PageBlocks blocks={blocks} links={links} />
     <small>updated on: {page.data.date}</small>
+    <PageBlocks blocks={blocks} links={links} />
   </div>
 </Layout>

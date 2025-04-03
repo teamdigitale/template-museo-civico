@@ -8,6 +8,13 @@ console.log("item", item);
 
   .hero-detail {
     background-color: $hero-bg-color;
+    padding: 0;
+  }
+
+  @media (min-width: 50em){
+    .hero-detail {
+      padding: 5rem 1rem;
+    }
   }
 
   .hero-detail-description {
@@ -16,46 +23,16 @@ console.log("item", item);
     color: $color-text-secondary;
   }
 
-  .content {
-    font-size: 1.2rem;
-    line-height: 1.5;
-  }
-  .content img {
-    max-width: 100%;
-    height: auto;
-  }
-  .content h1,
-  .content h2,
-  .content h3,
-  .content h4,
-  .content h5,
-  .content h6 {
-    margin-top: 1rem;
-    margin-bottom: 0.5rem;
-    font-weight: bold;
-  }
-  .content p {
-    margin-bottom: 1rem;
-  }
   .image-hero {
     margin-bottom: 2rem;
     position: relative;
     width: 100%;
-    height: 40vh;
+    height: 30vh;
     overflow: hidden;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-  }
-  .tag {
-    display: inline-block;
-    padding: 0.5rem 1rem;
-    margin-right: 8px;
-    border-radius: 4px;
-    background-color: $tag-bg-color;
-    color: $color-text-secondary;
-    font-weight: 600;
   }
 
   .share {
@@ -72,8 +49,9 @@ console.log("item", item);
     }
   }
 </style>
+<div class="container">
 <div class="row gx-0 hero-detail">
-  <div class="order-2 order-md-1 col-12 col-md-6 p-4 p-md-5 d-flex justify-content-center align-items-center">
+  <div class="order-2 order-lg-1 col-12 col-lg-6 p-4 p-lg-5 d-flex justify-content-center align-items-center">
     <div class="">
       <h1>{item.data.title}</h1>
       <div class="my-4">
@@ -87,7 +65,7 @@ console.log("item", item);
     </div>
     <!-- <pre>{JSON.stringify(item,null,2)}</pre> -->
   </div>
-  <div class="order-1 order-md-2 col-12 col-md-6 p-0">
+  <div class="order-1 order-lg-2 col-12 col-lg-6 p-0">
     <div class="img-responsive-wrapper ratio ratio-4x3 h-100">
       <img
         src={item.data.image.url}
@@ -96,4 +74,5 @@ console.log("item", item);
       />
     </div>
   </div>
+</div>
 </div>

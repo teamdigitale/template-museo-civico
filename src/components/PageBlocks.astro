@@ -1,4 +1,5 @@
 ---
+import { marked } from 'marked';
 const { blocks, links } = Astro.props;
 ---
 <!--
@@ -6,30 +7,58 @@ const { blocks, links } = Astro.props;
   {links.map((b: any) => (<span class='mx-2 text-secondary'><a href={`#${b.link || b.title.split(" ").join("_")}`}>{b.title}</a></span>))}
 </div>
 -->
-<div class="wrap">
-  <div class="menu-wrap">
-    <h3>Indice pagina</h3>
-    <ul class="link-list">
-    {links?.map((b: any) =>  (
-      <li class="nav-item">
-        <a class="nav-link" href={`#${b.link || b.title.split(" ").join("_")}`}>
-          <span>{b.title}</span>
-        </a>
-      </li>))}
-    </ul>
-  <div>
+<style>
+  .menu-wrap{
+    display: block;
+    margin: 10px;
+  }
+  .content-wrap{
+    display: block;
+  }
+  .wrap{
+    display: flex;
+    flex-direction: column;
+  }
+  @media (min-width: 20em){
+    .wrap{
+      flex-direction: row;
+    }
+  }
+  .menu-wrap .nav-item{
+    margin: 0 0.4rem;
+  }
+  @media (min-width: 20em){
+    .menu-wrap .nav-item{
+      margin: 1rem 0;
+    }
+  }
+</style>
+<div class="wrap contents">
+  {links.length > 0 && (
+    <div class="menu-wrap">
+      <h6>Indice pagina</h6>
+      <ul class="link-list">
+      {links?.map((b: any) =>  (
+        <li class="nav-item">
+          <a class="nav-link" href={`#${b.link || b.title.split(" ").join("_")}`}>
+            <span>{b.title}</span>
+          </a>
+        </li>))}
+      </ul>
+    </div>)
+  }
   <div class="content-wrap">
     {
       blocks.map((b: any) => {
         switch (b.type) {
           case "section":
             return (
-              <div class='paragraph my-4'>
+              <div class='content-block my-5 px-5'>
                 {b.linked && (
                   <a id={`${b.link || b.title.split(" ").join("_")}`} />
                 )}
                 {b.title && <h3>{b.title}</h3>}
-                <div set:text={b.body} />
+                <div set:html={marked.parse(b.body)} />
               </div>
             );
           default:
@@ -40,30 +69,4 @@ const { blocks, links } = Astro.props;
     }
   </div>
 </div>
-<style>
 
-  .menu-wrap{
-    background-color: pink;
-    position: relative;
-    display: block;
-
-  }
-  .content-wrap{
-    background-color: blue;
-    position: relative;
-    display: block;
-  }
-
-  .wrap{
-    width:100%;
-    display: flex;
-    background-color: red;
-    position: relative;
-  }
-
-  @media (min-width: 20em){
-    .wrap{
-      flex-direction: column;
-    }
-  }
-</style>

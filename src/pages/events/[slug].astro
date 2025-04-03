@@ -1,6 +1,8 @@
 ---
 import { getCollection } from "astro:content";
 import Layout from "../../layouts/Layout.astro";
+import HeroDetail from "../../components/HeroDetail.astro"
+import BreadCrumbs from "../../components/BreadCrumbs.astro";
 
 export async function getStaticPaths() {
   const items = await getCollection("events");
@@ -15,84 +17,31 @@ export async function getStaticPaths() {
   });
 }
 
-// const { slug } = Astro.params;
+const { slug } = Astro.params;
 const { item } = Astro.props;
-console.log("item", item);
 ---
-
 <Layout>
-  <div class='container my-5'>
-    <div class='image-hero'>
-      <img
-        src={item.data.image.url}
-        alt={item.data.image.alt}
-        class='img-fluid'
-      />
-    </div>
+  <div class='container my-2'>
+    <BreadCrumbs path={["events",slug]}/>
   </div>
-  <div class='content container mb-4'>
-    <h1>{item.data.title}</h1>
+  <HeroDetail item={item} />
+  <div class="container contents">
     <div class='mb-4'>
-      Location:
-      <b>{item.data.location}</b>
+      <div>
+        Location:
+        <b>{item.data.location}</b>
+      </div>
+      <div>
+        Link:
+        <b>{item.data.url}</b>
+      </div>
+      <div>
+        <small>from: {item.data.from}</small>
+        <small>to: {item.data.to}</small>
+      </div>
     </div>
-    <div class='mb-4'>
-      Link:
-      <b>{item.data.url}</b>
-    </div>
-    <div class='mb-4'>
-      <small>from: {item.data.from}</small>
-      <small>to: {item.data.from}</small>
-    </div>
-    <div class='mb-4'>
-      {item.data.tags?.map((tag: string) => <span class='tag'>{tag}</span>)}
-    </div>
-
-    <p>{item.data.description}</p>
     <p set:html={item.rendered?.html} />
-    <!-- <pre>{JSON.stringify(item,null,2)}</pre> -->
   </div>
+  <!-- <pre>{JSON.stringify(item,null,2)}</pre> -->
 </Layout>
 
-<style>
-  .content {
-    font-size: 1.2rem;
-    line-height: 1.5;
-  }
-  .content img {
-    max-width: 100%;
-    height: auto;
-  }
-  .content h1,
-  .content h2,
-  .content h3,
-  .content h4,
-  .content h5,
-  .content h6 {
-    margin-top: 1rem;
-    margin-bottom: 0.5rem;
-    font-weight: bold;
-  }
-  .content p {
-    margin-bottom: 1rem;
-  }
-  .image-hero {
-    margin-bottom: 2rem;
-    position: relative;
-    width: 100%;
-    height: 40vh;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  .tag {
-    display: inline-block;
-    padding: 0.5rem 1rem;
-    margin-right: 2px;
-    border-radius: 4px;
-    background-color: var(--bs-secondary);
-    color: white;
-  }
-</style>

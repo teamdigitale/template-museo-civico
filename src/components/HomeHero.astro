@@ -1,0 +1,84 @@
+---
+const props = Astro.props;
+console.log("hero", props);
+const { image, title, text, action } = props;
+---
+
+<section class='homehero'>
+  <!-- - img-->
+  <div class='bg-img img-responsive-wrapper'>
+    <div class='img-responsive'>
+      <div class='img-wrapper'>
+        <img src={image} alt={title}  />
+      </div>
+    </div>
+  </div>
+  <!-- - texts-->
+  <div class='container'>
+    <div class='row'>
+      <div class='col-12'>
+        <div class='mx-auto'>
+          <h1>{title}</h1>
+          <p class='d-none d-lg-block'>
+            {text}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- - overlay-->
+  <div class='bg-overlay'></div>
+</section>
+<style>
+  .homehero {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  @media (min-width: 30em){
+    .homehero { height: 25vh;}
+  }
+
+  @media (min-width: 60em){
+    .homehero { height: 50vh;}
+  }
+
+  .homehero h1 {
+    font-size: 3rem;
+    color: white;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  .myhero p {
+    font-size: 1.2rem;
+    color: white;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  .myhero .container {
+    position: relative;
+    z-index: 1;
+  }
+  .myhero .bg-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+  .myhero .bg-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(125, 38, 112, 0.5);
+    z-index: 0;
+  }
+</style>
