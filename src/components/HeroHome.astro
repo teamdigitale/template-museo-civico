@@ -1,7 +1,14 @@
 ---
 const props = Astro.props;
 console.log("hero", props);
-const { image, title, text, action } = props;
+const { image, title, text, overlayShow, overlayAlpha, overlayColor } = props;
+
+const cn =
+  overlayColor && overlayAlpha < 10
+    ? `background-color:${overlayColor}!important;opacity: 0.${overlayAlpha}!important;`
+    : overlayColor
+      ? `background-color: ${overlayColor};`
+      : "";
 ---
 
 <style lang='scss'>
@@ -79,11 +86,12 @@ const { image, title, text, action } = props;
           <h1>{title}</h1>
           <p class='d-none d-lg-block'>
             {text}
+            {cn}
           </p>
         </div>
       </div>
     </div>
   </div>
   <!-- - overlay-->
-  <!-- <div class='bg-overlay'></div> -->
+  {overlayShow && <div class='bg-overlay' style={cn} />}
 </section>

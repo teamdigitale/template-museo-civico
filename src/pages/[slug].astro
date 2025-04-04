@@ -3,6 +3,7 @@ import { getCollection } from "astro:content";
 import Layout from "../layouts/Layout.astro";
 import PageBlocks from "../components/PageBlocks.astro";
 import BreadCrumbs from "../components/BreadCrumbs.astro";
+import HeroDetail from "../components/HeroDetail.astro";
 
 export async function getStaticPaths() {
   const pages = await getCollection("pages");
@@ -26,13 +27,33 @@ const { page } = Astro.props;
 
 const blocks = page.data.blocks;
 const links = blocks.filter((b: any) => b.linked);
+
+const heroBlock = page.data.hero;
+let hero = undefined;
+if (heroBlock && heroBlock.image) {
+  hero = {
+    item: {
+      data: {
+        title: heroBlock.title,
+        description: heroBlock.text,
+        image: {
+          url: heroBlock.image,
+          alt: heroBlock.title,
+        },
+      },
+    },
+  };
+}
 ---
 
 <Layout>
   <div class='container my-5'>
-    <BreadCrumbs path={[slug]}/>
-    <h1>{page.data.title}</h1>
-    <small>updated on: {page.data.date}</small>
+    <BreadCrumbs path={[slug]} />
   </div>
+  {hero && <HeroDetail {...hero} />}
+  <div class='container my-5'>
+    {!hero && <h1>{page.data.title}</h1>}
+    <!-- <small>updated on: {page.data.date}</small> -->
     <PageBlocks blocks={blocks} links={links} />
+  </div>
 </Layout>
