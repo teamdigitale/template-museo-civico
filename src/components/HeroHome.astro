@@ -1,0 +1,89 @@
+---
+const props = Astro.props;
+console.log("hero", props);
+const { image, title, text, action } = props;
+---
+
+<style lang='scss'>
+  @import "../styles/variables";
+
+  .heroHome {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  @media (min-width: 30em) {
+    .heroHome {
+      height: 25vh;
+    }
+  }
+
+  @media (min-width: 60em) {
+    .heroHome {
+      height: 50vh;
+    }
+  }
+
+  .heroHome h1 {
+    font-size: 4rem;
+    color: white;
+    margin-bottom: 1rem;
+  }
+  .heroHome p {
+    font-size: 2rem;
+    color: white;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  .heroHome .container {
+    position: relative;
+    z-index: 1;
+  }
+  .heroHome .bg-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+  .heroHome .bg-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $overlay-bg-color;
+    z-index: 0;
+  }
+</style>
+
+<section class='heroHome'>
+  <!-- - img-->
+  <div class='bg-img img-responsive-wrapper'>
+    <div class='img-responsive'>
+      <div class='img-wrapper'>
+        <img src={image} alt={title} />
+      </div>
+    </div>
+  </div>
+  <!-- - texts-->
+  <div class='container'>
+    <div class='row'>
+      <div class='col-12'>
+        <div class=''>
+          <h1>{title}</h1>
+          <p class='d-none d-lg-block'>
+            {text}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- - overlay-->
+  <!-- <div class='bg-overlay'></div> -->
+</section>

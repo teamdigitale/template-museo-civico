@@ -4,7 +4,7 @@ import Layout from "../layouts/Layout.astro";
 import PageBlocks from "../components/PageBlocks.astro";
 import CardHorizontal from "../components/CardEvent.astro";
 import ImgCard from "../components/CardWork.astro";
-import Hero from "../components/Hero.astro";
+import Hero from "../components/HeroHome.astro";
 import CardNews from "../components/CardNews.astro";
 
 // Get all entries from a collection.
@@ -25,31 +25,37 @@ console.log("hero", hero);
 <Layout>
   {hero && <Hero {...hero} />}
 
+  <div class='container my-5'>
+    <div class='my-5'>
+      <PageBlocks blocks={blocks} links={links} />
+    </div>
+  </div>
 
-  <div class="bg-gray">
-   <div class="container my-5 ">
-    <div class="my-5 ">
-      <h3>In evidenza</h3>
-      <div class="row gap-4 mt-5">
-        {
-          allEvents.map((item) => (
-            <div>
-              <CardHorizontal {...item.data} slug={item.id} />
-            </div>
-          ))
-        }
+  <div class='bg-gray'>
+    <div class='container my-5'>
+      <div class='my-5'>
+        <h3>In evidenza</h3>
+        <div class='row gap-4 mt-5'>
+          {
+            allEvents.map((item) => (
+              <div>
+                <CardHorizontal {...item.data} slug={item.id} />
+              </div>
+            ))
+          }
+        </div>
       </div>
     </div>
-    </div>
-</div>
-<div class="container my-5">
+  </div>
+  
+  <div class='container my-5'>
     <div>
       <h3>Le ultime notizie</h3>
-      <div class="mt-5">
-        <div class="row row-cols-1 row-cols-lg-3 gx-lg-5 gy-5">
+      <div class='mt-5'>
+        <div class='row row-cols-1 row-cols-lg-3 gx-lg-5 gy-5'>
           {
             allNews.map((item) => (
-              <div class="col">
+              <div class='col'>
                 <CardNews {...item.data} slug={item.id} />
               </div>
             ))
@@ -58,30 +64,20 @@ console.log("hero", hero);
       </div>
     </div>
   </div>
- <div class="container my-5 ">
-    <div class="my-5">
+  <div class='container my-5'>
+    <div class='my-5'>
       <h3>Works</h3>
-      <div class="">
-        <div class="row">
+      <div class=''>
+        <div class='row'>
           {
             allWorks.map((item) => (
-              <div class="col">
+              <div class='col'>
                 <ImgCard {...item.data} slug={item.id} />
               </div>
             ))
           }
         </div>
       </div>
-      <div class="my-5">
-        <PageBlocks blocks={blocks} links={links} />
-      </div>
     </div>
   </div>
 </Layout>
-<style>
-  .bg-gray{
-    background-color: #fbf9fb;
-    padding-top: 10px;
-    padding-bottom: 10px;
-  }
-</style>

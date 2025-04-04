@@ -30,20 +30,46 @@
       "socials": true,
       "nav": [
         {
+          "title": "Il Museo",
+          "link": "",
+          "childs": [
+            {
+              "title": "Organizza la visita",
+              "link": "/museum#visit"
+            },
+            {
+              "title": "Esplora il museo",
+              "link": "/museum#explore"
+            },
+            {
+              "title": "Educazione e ricerca",
+              "link": "/museum#edu"
+            },
+            {
+              "title": "Bandi e gare",
+              "link": "/project"
+            },
+            {
+              "title": "Supporta il museo",
+              "link": "/about#support"
+            },
+            {
+              "title": "Organizzazione",
+              "link": "/about#org"
+            }
+          ]
+        },
+        {
           "title": "Mostre ed eventi",
           "link": "/events"
         },
         {
-          "title": " Works",
-          "link": "/#wroks"
+          "title": "Le Opere",
+          "link": "/works"
         },
         {
           "title": "News",
-          "link": "/#news"
-        },
-        {
-          "title": "Museo",
-          "link": "/"
+          "link": "/news"
         }
       ]
     }
@@ -167,6 +193,6 @@
       ]
     }
   ],
-  "domain": "https://template-museocivico-italia.vercel.app",
-  "logo": "/assets/logo.svg"
+  "domain": "https://template-museocivico-italia.netlify.app",
+  "logo": ""
 }
