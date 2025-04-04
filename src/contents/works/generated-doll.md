@@ -2,9 +2,9 @@
 image:
   alt: artwork
   url: /assets/doll.png
-title: "Generated dol"
+title: Generated dol
 description: Ai generated doll 2d, wannabe 3d like
-author: pc
+author: Salvador Dalì
 tags:
   - artworks
 ---
