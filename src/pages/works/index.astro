@@ -3,6 +3,7 @@ import { getCollection } from "astro:content";
 import Layout from "../../layouts/Layout.astro";
 import BreadCrumbs from "../../components/BreadCrumbs.astro";
 import CardWork from "../../components/CardWork.astro";
+import Hero from "../../components/Hero.astro";
 
 const items = await getCollection("works");
 ---
@@ -11,6 +12,7 @@ const items = await getCollection("works");
   <div class='container my-2'>
     <BreadCrumbs path={["works"]} />
   </div>
+  <Hero title={"Opere"} />
   <div class='container contents'>
     <div class='mt-5'>
       <div class='row row-cols-1 row-cols-lg-3 gx-lg-5 gy-5'>

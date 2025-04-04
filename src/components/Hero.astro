@@ -1,31 +1,15 @@
 ---
 const props = Astro.props;
 console.log("hero", props);
-const { image, title, text, action } = props;
+const { title, text } = props;
 ---
 
-<section class='myhero'>
-  <div class='container'>
-    <div class='row'>
-      <div class='col-12'>
-        <div class=''>
-          <h1>{title}</h1>
-          <p class='d-none d-lg-block'>
-            {text}
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- - overlay-->
-  <div class='bg-overlay'></div>
-</section>
 <style lang='scss'>
-@import url("src/styles/variables.scss");
-.myhero {
+  @import "../styles/variables";
+  .myhero {
     position: relative;
     width: 100%;
-    padding: 1.5rem auto;
+    min-height: 150px;
     overflow: hidden;
     display: flex;
     flex-direction: column;
@@ -53,8 +37,23 @@ const { image, title, text, action } = props;
     height: 100%;
     background-color: $secondary;
     background-image: url("src/assets/llleaves.svg");
-    background-repeat: repeat-x;
-    background-size: cover;
+    background-repeat: repeat;
+    // background-size: cover;
     z-index: 0;
   }
 </style>
+
+<section class='myhero'>
+  <div class='container'>
+    <div class='row'>
+      <div class='col-12'>
+        <div class=''>
+          <h1>{title}</h1>
+          {text && <p class='d-none d-lg-block'>{text}</p>}
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- - overlay-->
+  <div class='bg-overlay'></div>
+</section>
