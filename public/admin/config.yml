@@ -8,37 +8,79 @@ media_folder: "public/assets" # Location where files will be stored in the repo
 public_folder: "/assets" # The src attribute for uploaded media
 
 collections:
+  - label: "Home Page"
+    name: "homePage"
+    format: "json"
+    editor:
+      preview: false
+    files:
+      - label: "Home Page"
+        name: "home"
+        file: "src/contents/config/home.json"
+        fields:
+          - label: "Hero"
+            name: "hero"
+            widget: "object"
+            fields:
+              - { label: "Image", name: "image", widget: "image" }
+              - { label: "Title", name: "title", widget: "string", required: false }
+              - { label: "Text", name: "text", widget: "string", required: false }
+              - { label: "Has Overlay", name: "overlayShow", widget: "boolean", default: true }
+              - { label: "Overlay Color", name: "overlayColor", widget: "color", default: "#ffccee" }
+              - { label: "Overlay Opacity", name: "overlayAlpha", widget: "number", default: 9 , max: 10, min : 1 }
+          - label: "Sections"
+            name: "sections"
+            widget: "list"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Kind", name: "type", widget: "select",  options: ["news", "events", "works"]}
+          - label: "NewsLetter"
+            name: "newsletter"
+            widget: "object"
+            fields:
+              - { label: "Title", name: "title", widget: "string" , required: false }
+              - { label: "Text", name: "text", widget: "string" , required: false }
+              - { label: "show", name: "show", widget: "boolean",  default: true}
+              - { label: "url", name: "url", widget: "string",  default: true}
+          - label: "Call to action"
+            name: "cta"
+            widget: "object"
+            fields:
+              - { label: "Title", name: "title", widget: "string" , required: false }
+              - { label: "Text", name: "text", widget: "string" , required: false }
+              - { label: "show", name: "show", widget: "boolean",  default: true}
   - name: pages
     label: "Pages" # Used in the UI
     folder: "src/contents/pages" # The path to the folder where the documents are stored
     format: "frontmatter"  #nested: { depth: 3 }     #meta: { path: { widget: string, label: 'uri', index_file: 'index' } }
     create: true
+    editor:
+      preview: false
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Description", name: "description", widget: "string" }
       - { label: "Publish Date", name: "datetime", widget: "datetime" }
-      - label: "Gallery"
-        name: "gallery"
-        widget: "list"
+      - label: "Hero"
+        name: "hero"
+        required: false
+        widget: "object"
         fields:
-          - label: "Image"
-            name: "image"
-            widget: "object"
-            fields:
-              - { label: "Url", name: "url", widget: "image" }
-              - { label: "Alt", name: "alt", widget: string, default: "thumb" }
+          - { label: "Title", name: "title", widget: "string", required: false }
+          - { label: "Text", name: "text", widget: "string", required: false }
+          - { label: "Image", name: "image", widget: "image",  required: false }
       - label: "Blocks"
         name: "blocks"
         widget: "list"
         types:
-          - label: "Hero Block"
-            name: "hero"
+          - label: "Featured Block"
+            name: "featured"
             required: false
             widget: "object"
             fields:
               - { label: "Title", name: "title", widget: "string", required: false }
               - { label: "Text", name: "text", widget: "string", required: false }
-              - { label: "Image", name: "image", widget: "image",  required: false }
+              - { label: "link", name: "link", widget: "string",  required: false }
+              - { label: "Image", name: "image", widget: "image",  required: false  }
           - label: "Section"
             name: "section"
             widget: "object"
@@ -58,6 +100,8 @@ collections:
     folder: "src/contents/news" # The path to the folder where the documents are stored
     format: "frontmatter"
     create: true # Allow users to create new documents in this collection
+    editor:
+      preview: false
     fields: # The fields for each document, usually in frontmatter
       - label: "Image"
         name: "image"
@@ -76,6 +120,8 @@ collections:
     folder: "src/contents/events" # The path to the folder where the documents are stored
     format: "frontmatter"
     create: true # Allow users to create new documents in this collection
+    editor:
+      preview: false
     fields: # The fields for each document, usually in frontmatter
       - label: "Image"
         name: "image"
@@ -97,6 +143,8 @@ collections:
     folder: "src/contents/works" # The path to the folder where the documents are stored
     format: "frontmatter"
     create: true # Allow users to create new documents in this collection
+    editor:
+      preview: false
     fields: # The fields for each document, usually in frontmatter
       - label: "Image"
         name: "image"

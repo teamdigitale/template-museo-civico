@@ -3,6 +3,10 @@ title: About
 description: About us
 datetime: 2025-04-01T20:41:00.000Z
 gallery: []
+hero:
+  image: /assets/Candolim-Beach.jpg
+  title: "Chi siamo ? "
+  text: "E dove stiamo andando ? "
 blocks:
   - type: section
     linked: true

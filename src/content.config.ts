@@ -20,4 +20,8 @@ const config = defineCollection({
   loader: file("./src/contents/config/data.json"),
 });
 
-export const collections = { pages, news, works, events, config };
+const home = defineCollection({
+  loader: file("./src/contents/config/home.json"),
+});
+
+export const collections = { pages, news, works, events, config, home };

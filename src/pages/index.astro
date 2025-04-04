@@ -1,10 +1,10 @@
 ---
 import { getCollection } from "astro:content";
 import Layout from "../layouts/Layout.astro";
-import PageBlocks from "../components/PageBlocks.astro";
-import CardHorizontal from "../components/CardEvent.astro";
-import ImgCard from "../components/CardWork.astro";
-import Hero from "../components/HeroHome.astro";
+import CardEvent from "../components/CardEvent.astro";
+import CardWork from "../components/CardWork.astro";
+import HeroHome from "../components/HeroHome.astro";
+import CTA from "../components/Hero.astro";
 import CardNews from "../components/CardNews.astro";
 
 // Get all entries from a collection.
@@ -12,72 +12,82 @@ import CardNews from "../components/CardNews.astro";
 const allNews = await getCollection("news");
 const allEvents = await getCollection("events");
 const allWorks = await getCollection("works");
-const allPages = await getCollection("pages");
-const home = allPages.find((i) => i.id === "home");
 
-const hero = home?.data.blocks.find((b: any) => b.type === "hero");
-const blocks = home?.data.blocks.filter((b: any) => b.type !== "hero");
-const links = blocks?.filter((b: any) => b.linked);
+const home: any = await getCollection("home");
 
-console.log("hero", hero);
+const hero = home.find((item: any) => item.id === "hero").data;
+const newsletter = home.find((item: any) => item.id === "newsletter").data;
+const cta = home.find((item: any) => item.id === "cta").data;
+const sections = home.find((item: any) => item.id === "sections").data;
 ---
 
 <Layout>
-  {hero && <Hero {...hero} />}
+  {hero && <HeroHome {...hero} />}
 
-  <div class='container my-5'>
-    <div class='my-5'>
-      <PageBlocks blocks={blocks} links={links} />
-    </div>
-  </div>
+  {
+    sections?.map((section: any, index: number) => {
+      const odd = index % 2 === 0;
+      const cn = odd ? "bg-gray" : "";
+      return (
+        <div class={cn}>
+          <div class='container my-5'>
+            <div class='my-5'>
+              <h3>{section.title}</h3>
+              {section.type === "news" && (
+                <div class='mt-5'>
+                  <div class='row row-cols-1 row-cols-lg-3 gx-lg-5 gy-5'>
+                    {allNews.map((item) => (
+                      <div class='col'>
+                        <CardNews {...item.data} slug={item.id} />
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+              {section.type === "events" && (
+                <div class='row'>
+                  <div class='row gap-4 mt-5'>
+                    {allEvents.map((item) => (
+                      <div>
+                        <CardEvent {...item.data} slug={item.id} />
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+              {section.type === "works" && (
+                <div class='row'>
+                  <div class='mt-5'>
+                    <div class='row row-cols-1 row-cols-lg-3 gx-lg-5 gy-5'>
+                      {allWorks.map((item) => (
+                        <div class='col'>
+                          <CardWork {...item.data} slug={item.id} />
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+      );
+    })
+  }
 
-  <div class='bg-gray'>
-    <div class='container my-5'>
-      <div class='my-5'>
-        <h3>In evidenza</h3>
-        <div class='row gap-4 mt-5'>
-          {
-            allEvents.map((item) => (
-              <div>
-                <CardHorizontal {...item.data} slug={item.id} />
-              </div>
-            ))
-          }
-        </div>
+  {
+    newsletter && (
+      <div class='container my-5'>
+        <CTA {...newsletter} />
       </div>
-    </div>
-  </div>
-  
-  <div class='container my-5'>
-    <div>
-      <h3>Le ultime notizie</h3>
-      <div class='mt-5'>
-        <div class='row row-cols-1 row-cols-lg-3 gx-lg-5 gy-5'>
-          {
-            allNews.map((item) => (
-              <div class='col'>
-                <CardNews {...item.data} slug={item.id} />
-              </div>
-            ))
-          }
-        </div>
+    )
+  }
+
+  {
+    cta && (
+      <div class='container my-5'>
+        <CTA {...cta} />
       </div>
-    </div>
-  </div>
-  <div class='container my-5'>
-    <div class='my-5'>
-      <h3>Works</h3>
-      <div class='mt-5'>
-        <div class='row row-cols-1 row-cols-lg-3 gx-lg-5 gy-5'>
-          {
-            allWorks.map((item) => (
-              <div class='col'>
-                <ImgCard {...item.data} slug={item.id} />
-              </div>
-            ))
-          }
-        </div>
-      </div>
-    </div>
-  </div>
+    )
+  }
 </Layout>

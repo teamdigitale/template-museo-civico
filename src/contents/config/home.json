@@ -1,0 +1,35 @@
+{
+  "hero": {
+    "image": "/assets/interior-national-gallery-of-art-washington-dc.jpg",
+    "title": "Arte, storia e cultura tutte in unico Museo.",
+    "text": "Il museo di arte moderna e contemporanea della città di Roma. Esplora la storia artistica italiana dal 1900 ad oggi.",
+    "overlayShow": true,
+    "overlayColor": "#570440",
+    "overlayAlpha": 9
+  },
+  "newsletter": {
+    "title": "Iscriviti alla nostra newsletter ",
+    "text": "Iscriviti per ricevere la nostra newsletter con tutte le novità del Museo",
+    "show": true,
+    "url": "https://mailinglist/numxxxx"
+  },
+  "cta": {
+    "title": "Vuoi supportare il museo?",
+    "text": "Fai una donazione e diventa nostro membro",
+    "show": true
+  },
+  "sections": [
+    {
+      "title": "Eventi in evidenza",
+      "type": "events"
+    },
+    {
+      "title": "Immergiti nel museo",
+      "type": "works"
+    },
+    {
+      "title": "Le ultime notizie",
+      "type": "news"
+    }
+  ]
+}
