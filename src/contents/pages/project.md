@@ -4,8 +4,6 @@ description: Project
 datetime: 2025-04-01T20:41:00.000Z
 gallery: []
 blocks:
-  - type: hero
-    image: /assets/Candolim-Beach.jpg
   - type: section
     linked: true
     title: Organizzazione
@@ -24,7 +22,8 @@ blocks:
     linked: true
     title: Direttori e Personale
     link: people
-    body: "Meowing chowing and wowing pet me pet me pet me pet me, bite, scratch,
+    body:
+      "Meowing chowing and wowing pet me pet me pet me pet me, bite, scratch,
       why are you petting me and pee in the shoe i like fish mouse chase dog
       then run away yet tickle my belly at your own peril i will pester for food
       when you're in the kitchen even if it's salad "
@@ -36,4 +35,23 @@ blocks:
       neighbour's dog or thinking longingly about tuna brine so snuggles up to
       shoulders or knees and purrs you to sleep so catch eat throw up catch eat
       throw up bad birds. "
+timeline:
+  - type: placeholder
+    year: 1700
+    title: Primo 1700
+  - type: item
+    title: Invenzione dellla Ruota
+    year: 1715
+    date: 1715-01-01T00:00:00.000Z
+    body: la ruota è stata scoperta ... incredibile
+  - type: placeholder
+    title: Primi 800
+    year: 1800
+  - type: item
+    date: 1804-01-01T00:00:00.000Z
+    body: |-
+      E morì! \
+      The end.
+    title: La muerte
+    year: 1804
 ---

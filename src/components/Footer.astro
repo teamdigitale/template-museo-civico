@@ -1,6 +1,6 @@
 ---
 const props = Astro.props;
-const { socials, seo } = props;
+const { socials, seo,logo } = props;
 const rows = props.data[0].rows;
 const subFooter = [
   {
@@ -36,8 +36,8 @@ const subFooter = [
             <div class='it-brand-wrapper'>
               <a href='/' data-focus-mouse='false'>
                 {
-                  seo?.logo ? (
-                    <img src={seo.logo} height={80 } class="mx-2" alt={"logo"}/>
+                  logo ? (
+                    <img src={logo} height={120} class="mx-2" alt={"logo"}/>
                   ) : (
                     <svg class='icon' aria-hidden='true'>
                       <use href='/icons/sprites.svg#it-pa' />

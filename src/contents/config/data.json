@@ -4,12 +4,8 @@
     "title": "Museo Civico",
     "subtitle": "Museo CIvico di Nome città ",
     "description": "Template di esempio di un museo civico blablablal",
-    "keywords": [
-      "museo",
-      "template",
-      "mah"
-    ],
-    "logo": ""
+    "keywords": ["museo", "template", "mah"],
+    "image": "/assets/logo_comitato_200volta.png"
   },
   "socials": [
     {
@@ -27,7 +23,7 @@
   ],
   "header": [
     {
-      "socials": true,
+      "socials": false,
       "nav": [
         {
           "title": "Il Museo",
@@ -194,5 +190,5 @@
     }
   ],
   "domain": "https://template-museocivico-italia.netlify.app",
-  "logo": ""
+  "logo": "/assets/logo_comitato_200volta_neg.png"
 }

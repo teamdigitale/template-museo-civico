@@ -10,6 +10,8 @@ const header = config.find((item) => item.id === "header");
 const footer = config.find((item) => item.id === "footer");
 const seo = config.find((item) => item.id === "seo");
 const socials = config.find((item) => item.id === "socials");
+const logo = config.find((item) => item.id === "logo");
+console.log("config", config);
 ---
 
 <!doctype html>
@@ -37,11 +39,21 @@ const socials = config.find((item) => item.id === "socials");
     </title>
   </head>
   <body>
-    <Header data={header?.data[0]} socials={socials?.data} seo={seo?.data} />
+    <Header
+      data={header?.data[0]}
+      socials={socials?.data}
+      seo={seo?.data}
+      logo={logo?.data}
+    />
     <main>
       <slot />
     </main>
-    <Footer data={footer?.data} socials={socials?.data} seo={seo?.data} />
+    <Footer
+      data={footer?.data}
+      socials={socials?.data}
+      seo={seo?.data}
+      logo={logo?.data}
+    />
   </body>
   <style>
     html,
@@ -52,4 +64,5 @@ const socials = config.find((item) => item.id === "socials");
     }
   </style>
   <script src={bsi}></script>
-</html>
+</html>} />
+

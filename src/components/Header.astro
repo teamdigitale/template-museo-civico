@@ -1,7 +1,7 @@
 ---
 const props = Astro.props;
 // console.log("header", props);
-const { data, socials, seo } = props;
+const { data, socials, seo,logo } = props;
 const nav = data.nav;
 // console.log("nav", nav);
 ---
@@ -76,8 +76,8 @@ const nav = data.nav;
               <div class='it-brand-wrapper'>
                 <a href='/'>
                   {
-                    seo?.logo ? (
-                      <img src={seo.logo} height={80 } class="mx-2" alt={"logo"}/>
+                    logo ? (
+                      <img src={logo} height={120 } class="mx-2" alt={"logo"}/>
                     ) : (
                       <svg class='icon' aria-hidden='true'>
                         <use href='/icons/sprites.svg#it-pa' />

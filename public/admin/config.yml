@@ -95,6 +95,26 @@ collections:
             fields:
               - { label: "Image", name: "image", widget: "image" }
               - { label: "Alt text", name: "alt", widget: "string" }
+      - label: "Timeline"
+        name: "timeline"
+        widget: "list"
+        types:
+          - label: "Timeline placeholder"
+            name: "placeholder"
+            required: false
+            widget: "object"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Year", name: "year", widget: "number"}
+          - label: "Timeline Item"
+            name: "item"
+            widget: "object"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Year", name: "year", widget: "number"  }
+              - { label: "Date", name: "date", widget: "datetime"  }
+              - { label: "Text", name: "body", widget: "markdown", required: true }
+              - { label: "Link", name: "link", widget: "string", required: false }
   - name: "news"
     label: "News" # Used in the UI
     folder: "src/contents/news" # The path to the folder where the documents are stored
@@ -182,7 +202,7 @@ collections:
                 name: "subtitle"
                 widget: "string"
                 required: false
-              - label: "logo"
+              - label: "image"
                 name: "image"
                 widget: "image"
                 required: false

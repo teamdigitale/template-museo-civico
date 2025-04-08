@@ -2,18 +2,18 @@ $primary-h: 0;
 $primary-s: 0;
 $primary-b: 20;
 
-$primary: #333;
+$primary: #060683;
 $header-slim-bg-color: #262626;
 
-$color-text-primary-hover: hsl(0, 0%, 20%);
-$color-text-primary-active: hsl(0, 0%, 20%);
-$color-text-accent: #7d2670;
-$color-text-secondary: #2f475e;
+$color-text-primary-hover: hsl(292, 93%, 23%);
+$color-text-primary-active: hsl(280, 91%, 41%);
+$color-text-accent: #060683;
+$color-text-secondary: #4d3131;
 
-$overlay-bg-color: rgba(103, 8, 60, 0.85);
+$overlay-bg-color: rgba(14, 6, 73, 0.85);
 
-$secondary: #7d2670;
-$tag-bg-color: #F6EFF5;
+$secondary: #060683;
+$tag-bg-color: #040404;
 $hero-bg-color: #FBF9FB;
 
 @mixin multiline-ellipsis($lines: 3) {
