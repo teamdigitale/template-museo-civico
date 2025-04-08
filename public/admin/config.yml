@@ -21,13 +21,14 @@ collections:
           - label: "Hero"
             name: "hero"
             widget: "object"
+            required: false
             fields:
-              - { label: "Image", name: "image", widget: "image" }
+              - { label: "Image", name: "image", widget: "image", required: false }
               - { label: "Title", name: "title", widget: "string", required: false }
               - { label: "Text", name: "text", widget: "string", required: false }
               - { label: "Has Overlay", name: "overlayShow", widget: "boolean", default: true }
-              - { label: "Overlay Color", name: "overlayColor", widget: "color", default: "#ffccee" }
-              - { label: "Overlay Opacity", name: "overlayAlpha", widget: "number", default: 9 , max: 10, min : 1 }
+              - { label: "Overlay Color", name: "overlayColor", widget: "color", required: false}
+              - { label: "Overlay Opacity", name: "overlayAlpha", widget: "number", default: 9 , max: 10, min : 1 , required: false}
           - label: "Sections"
             name: "sections"
             widget: "list"
@@ -37,6 +38,7 @@ collections:
           - label: "NewsLetter"
             name: "newsletter"
             widget: "object"
+            required: false
             fields:
               - { label: "Title", name: "title", widget: "string" , required: false }
               - { label: "Text", name: "text", widget: "string" , required: false }
@@ -45,6 +47,7 @@ collections:
           - label: "Call to action"
             name: "cta"
             widget: "object"
+            required: false
             fields:
               - { label: "Title", name: "title", widget: "string" , required: false }
               - { label: "Text", name: "text", widget: "string" , required: false }

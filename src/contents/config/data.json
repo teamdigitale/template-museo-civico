@@ -9,7 +9,7 @@
       "template",
       "mah"
     ],
-    "image": "/assets/logo_comitato_200volta.png"
+    "image": ""
   },
   "socials": [
     {
@@ -198,5 +198,5 @@
     }
   ],
   "domain": "https://template-museocivico-italia.netlify.app",
-  "logo": "/assets/logo_comitato_200volta_neg.png"
+  "logo": ""
 }

@@ -56,7 +56,6 @@ if (heroBlock && heroBlock.image) {
   {hero && <HeroDetail {...hero} />}
   <div class='container my-5'>
     {!hero && <h1>{page.data.title}</h1>}
-    <!-- <small>updated on: {page.data.date}</small> -->
     {blocks && links && <PageBlocks blocks={blocks} links={links} />}
     {timeline && <Timeline timeline={timeline} />}
     {teamBlock && <TeamBlock {...teamBlock} />}

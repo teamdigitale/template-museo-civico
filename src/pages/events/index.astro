@@ -7,12 +7,11 @@ import Hero from "../../components/Hero.astro";
 
 const items = await getCollection("events");
 ---
-
 <Layout>
   <div class='container my-2'>
     <BreadCrumbs path={["events"]} />
+    <Hero title={"Eventi"}/>
   </div>
-  <Hero title={"Eventi"}/>
   <div class='container contents'>
     <div class='mt-5'>
       <div class='row'>
@@ -26,5 +25,4 @@ const items = await getCollection("events");
       </div>
     </div>
   </div>
-  <!-- <pre>{JSON.stringify(item,null,2)}</pre> -->
 </Layout>

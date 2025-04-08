@@ -6,14 +6,14 @@
 }
 
 .it-footer-main {
-  background-color: #111!important;
+  background-color: $primary!important;
 }
 .it-footer-small-prints{
-  background-color: #222!important;
+  background-color: $header-slim-bg-color!important;
 }
 
 .bg-gray {
-  background-color: #fbf9fb;
+  background-color: $hero-bg-color;
   padding-top: 10px;
   padding-bottom: 10px;
 }

@@ -4,7 +4,7 @@ import Layout from "../layouts/Layout.astro";
 import CardEvent from "../components/CardEvent.astro";
 import CardWork from "../components/CardWork.astro";
 import HeroHome from "../components/HeroHome.astro";
-import CTA from "../components/Hero.astro";
+import CTA from "../components/CTA.astro";
 import CardNews from "../components/CardNews.astro";
 
 // Get all entries from a collection.
@@ -85,9 +85,7 @@ const sections = home.find((item: any) => item.id === "sections").data;
 
   {
     cta && (
-      <div class='container my-5'>
         <CTA {...cta} />
-      </div>
     )
   }
 </Layout>

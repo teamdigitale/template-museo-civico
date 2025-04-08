@@ -34,6 +34,10 @@ console.log("config", config);
     <meta name='title' content={seo?.data.title || "Template Museo Civico"} />
     <meta name='description' content={seo?.data.description} />
     <meta name='keywords' content={seo?.data.keywords.join(",")} />
+    <og:image
+      content={seo?.data.image}
+      property='og:image'>
+    </og:image>
     <title>
       {Astro.props.title || seo?.data.title || "Template Museo Civico"}
     </title>
@@ -64,5 +68,5 @@ console.log("config", config);
     }
   </style>
   <script src={bsi}></script>
-</html>} />
+</html>
 
