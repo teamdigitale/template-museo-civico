@@ -62,7 +62,7 @@ if (heroBlock && heroBlock.image) {
 
     <div class='container my-5'>
       <h2>{teamBlock?.title}</h2>
-      <div set:html={marked.parse(teamBlock?.body)} />
+      {teamBlock?.body && <div set:html={marked.parse(teamBlock?.body)} />}
       <div class='row'>
         {
           teamBlock?.team?.map((p: any) => (

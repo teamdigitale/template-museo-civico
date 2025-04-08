@@ -41,7 +41,7 @@ collections:
               - { label: "Title", name: "title", widget: "string" , required: false }
               - { label: "Text", name: "text", widget: "string" , required: false }
               - { label: "show", name: "show", widget: "boolean",  default: true}
-              - { label: "url", name: "url", widget: "string",  default: true}
+              - { label: "url", name: "url", widget: "string"}
           - label: "Call to action"
             name: "cta"
             widget: "object"
@@ -49,6 +49,15 @@ collections:
               - { label: "Title", name: "title", widget: "string" , required: false }
               - { label: "Text", name: "text", widget: "string" , required: false }
               - { label: "show", name: "show", widget: "boolean",  default: true}
+              - label: "link"
+                name: "link"
+                widget: "object"
+                required: false
+                fields:
+                  - { label: "Label", name: "label", widget: "string" , required: false }
+                  - { label: "Url Esterno", name: "external", widget: "boolean",  default: true}
+                  - { label: "url", name: "url", widget: "string"}
+
   - name: pages
     label: "Pages" # Used in the UI
     folder: "src/contents/pages" # The path to the folder where the documents are stored
@@ -81,6 +90,7 @@ collections:
               - { label: "Title", name: "title", widget: "string", required: false }
               - { label: "Text", name: "text", widget: "string", required: false }
               - { label: "link", name: "link", widget: "string",  required: false }
+              - { label: "Inverted", name: "inverted", widget: "boolean",  default: false }
               - { label: "Image", name: "image", widget: "image",  required: false  }
           - label: "Section"
             name: "section"
