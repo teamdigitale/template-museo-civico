@@ -35,12 +35,61 @@ blocks:
       neighbour's dog or thinking longingly about tuna brine so snuggles up to
       shoulders or knees and purrs you to sleep so catch eat throw up catch eat
       throw up bad birds. "
-  - type: person
-    pic: /assets/logo.png
-    name: Mr Monster
-    role: One eyed controller
-  - type: person
-    pic: /assets/logo.svg
-    name: Mrs Beast
-    role: Three Eyed Controller
+teamBlock:
+  title: The Team
+  body: this is our team.
+  team:
+    - person:
+        name: Da Doll
+        pic: /assets/doll.png
+        role: the doll
+    - person:
+        name: Alessandro Volta
+        pic: /assets/20485f.jpg
+        role: boss
+    - person:
+        name: The Boy
+        pic: /assets/screenshot-2025-04-04-at-10.55.50.png
+        role: the boy Meowing chowing and wowing
+    - person:
+        name: The Boy
+        pic: /assets/screenshot-2025-04-04-at-10.55.50.png
+        role: the boy pee in the shoe
+    - person:
+        name: The Boy
+        pic: /assets/screenshot-2025-04-04-at-10.55.50.png
+        role: the boy run away yet tickle my belly
+    - person:
+        name: Mr Monster
+        pic: /assets/logo.png
+        role: One eyed controller
+    - person:
+        name: The Boy
+        pic: /assets/screenshot-2025-04-04-at-10.55.50.png
+        role: the boy like fish mouse chase dog
+    - person:
+        name: Mrs Beast
+        pic: /assets/logo.svg
+        role: Three Eyed Controller
+    - person:
+        name: The Boy
+        pic: /assets/screenshot-2025-04-04-at-10.55.50.png
+        role: the boy
+    - person:
+        name: The Boy
+        pic: /assets/screenshot-2025-04-04-at-10.55.50.png
+        role: the boy
+    - person:
+        name: Mss Future
+        pic: /assets/edo6365_a_cyberpunk_chinese_woman_standing_motionless_in_a_neon_303d3daf-5adc-40d5-96b2-9316f646c7c0.png
+        role: Cybernetic Controller
+    - person:
+        name: The Boy
+        pic: /assets/screenshot-2025-04-04-at-10.55.50.png
+        role: the boy
+    - person:
+        name: The Boy
+        pic: /assets/screenshot-2025-04-04-at-10.55.50.png
+        role: the boy
 ---
+Lorem ipsum dolor

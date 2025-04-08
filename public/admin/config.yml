@@ -59,7 +59,7 @@ collections:
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Description", name: "description", widget: "string" }
-      - { label: "Publish Date", name: "datetime", widget: "datetime" }
+      - { label: "Body", name: "body", widget: "markdown", required: false }
       - label: "Hero"
         name: "hero"
         required: false
@@ -71,6 +71,7 @@ collections:
       - label: "Blocks"
         name: "blocks"
         widget: "list"
+        required: false
         types:
           - label: "Featured Block"
             name: "featured"
@@ -95,20 +96,13 @@ collections:
             fields:
               - { label: "Image", name: "image", widget: "image" }
               - { label: "Alt text", name: "alt", widget: "string" }
-          - label: "Person"
-            name: "person"
-            widget: "object"
-            fields:
-              - {label: "Pic", name: "pic", widget: "image", required: true}
-              - {label: "Full Name", name: "name", widget: "string", required: true }
-              - {label: "Role", name: "role", widget: "string", required: true}
       - label: "Timeline"
         name: "timeline"
         widget: "list"
+        required: false
         types:
           - label: "Timeline placeholder"
             name: "placeholder"
-            required: false
             widget: "object"
             fields:
               - { label: "Title", name: "title", widget: "string" }
@@ -120,8 +114,27 @@ collections:
               - { label: "Title", name: "title", widget: "string" }
               - { label: "Year", name: "year", widget: "number"  }
               - { label: "Date", name: "date", widget: "datetime"  }
-              - { label: "Text", name: "body", widget: "markdown", required: true }
+              - { label: "Text", name: "body", widget: "markdown"}
               - { label: "Link", name: "link", widget: "string", required: false }
+      - label: "Team Block"
+        name: "teamBlock"
+        widget: "object"
+        required: false
+        fields:
+          - { label: "Title", name: "title", widget: "string", required: false  }
+          - { label: "Text", name: "body", widget: "markdown", required: false }
+          - label: "People"
+            name: "team"
+            widget: "list"
+            fields:
+              - label: "Person"
+                name: "person"
+                widget: "object"
+                fields:
+                  - {label: "Full Name", name: "name", widget: "string", required: true }
+                  - {label: "Pic", name: "pic", widget: "image", required: true}
+                  - {label: "Role", name: "role", widget: "string", required: true}
+      - { label: "Publish Date", name: "datetime", widget: "datetime" }
   - name: "news"
     label: "News" # Used in the UI
     folder: "src/contents/news" # The path to the folder where the documents are stored

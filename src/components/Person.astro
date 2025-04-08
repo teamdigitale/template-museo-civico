@@ -18,12 +18,12 @@ const { pic, name, role } = props;
     letter-spacing: 0;
   }
 </style>
-<div class='avatar-wrapper avatar-extra-text'>
+<div class='avatar-wrapper avatar-extra-text mx-2'>
   <div class='avatar size-xxl'>
     <img src={pic} alt='' aria-hidden='true' />
   </div>
   <div class='extra-text'>
     <h4>{name}</h4>
-    <div>{role}</div>
+    <small>{role}</small>
   </div>
 </div>
