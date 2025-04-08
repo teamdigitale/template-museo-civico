@@ -4,10 +4,6 @@ description: Museum
 datetime: 2025-04-01T20:41:00.000Z
 gallery: []
 blocks:
-  - type: hero
-    title: The Museum
-    text: the museum description text or claim
-    image: /assets/worlds-best-museums.jpg
   - type: section
     linked: true
     title: Organizzazione
@@ -30,10 +26,10 @@ blocks:
 
       ## Emphasis
 
-      *This text will be italic*  
+      *This text will be italic*
       _This will also be italic_
 
-      **This text will be bold**  
+      **This text will be bold**
       __This will also be bold__
 
       _You **can** combine them_
@@ -60,7 +56,8 @@ blocks:
     linked: true
     title: Direttori e Personale
     link: people
-    body: "Meowing chowing and wowing pet me pet me pet me pet me, bite, scratch,
+    body:
+      "Meowing chowing and wowing pet me pet me pet me pet me, bite, scratch,
       why are you petting me and pee in the shoe i like fish mouse chase dog
       then run away yet tickle my belly at your own peril i will pester for food
       when you're in the kitchen even if it's salad "
@@ -72,7 +69,7 @@ blocks:
     title: Explore
     link: explore
     body: >
-      
+
       ## Lists
 
 
