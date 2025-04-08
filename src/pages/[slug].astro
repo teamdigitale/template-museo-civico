@@ -4,9 +4,8 @@ import Layout from "../layouts/Layout.astro";
 import PageBlocks from "../components/PageBlocks.astro";
 import BreadCrumbs from "../components/BreadCrumbs.astro";
 import HeroDetail from "../components/HeroDetail.astro";
-import Person from "../components/Person.astro";
-import { marked } from "marked";
 import Timeline from "../components/Timeline.astro";
+import TeamBlock from "../components/TeamBlock.astro";
 
 export async function getStaticPaths() {
   const pages = await getCollection("pages");
@@ -63,19 +62,7 @@ if (heroBlock && heroBlock.image) {
     <!-- <small>updated on: {page.data.date}</small> -->
     <PageBlocks blocks={blocks} links={links} />
 
-    <div class='container my-5'>
-      <h2>{teamBlock?.title}</h2>
-      {teamBlock?.body && <div set:html={marked.parse(teamBlock?.body)} />}
-      <div class='row'>
-        {
-          teamBlock?.team?.map((p: any) => (
-            <div class='col-12 col-md-6 col-lg-4'>
-              <Person {...p.person} />
-            </div>
-          ))
-        }
-      </div>
-    </div>
+    {teamBlock && <TeamBlock {...teamBlock} />}
 
     {timeline && <Timeline timeline={timeline} />}
 

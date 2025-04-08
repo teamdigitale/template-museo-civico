@@ -1,0 +1,20 @@
+---
+import { marked } from 'marked';
+import Person from './Person.astro';
+
+const props = Astro.props;
+const { title, body, team } = props;
+---
+<div class='container my-5'>
+  <h2>{title}</h2>
+  {body && <div set:html={marked.parse(body)} />}
+  <div class='row'>
+    {
+      team?.map((p: any) => (
+        <div class='col-12 col-md-6 col-lg-4'>
+          <Person {...p.person} />
+        </div>
+      ))
+    }
+  </div>
+</div>
