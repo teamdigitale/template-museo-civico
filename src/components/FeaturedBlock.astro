@@ -1,0 +1,39 @@
+---
+const { title, text, link, inverted, image } = Astro.props;
+---
+
+<style lang='scss'>
+  @import "../styles/variables";
+
+  .featured-wrapper {
+    background-color: $hero-bg-color;
+    position: relative;
+  }
+
+  .featured-overlay {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 5px;
+    position: absolute;
+  }
+
+  .detail-description {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    color: $color-text-secondary;
+  }
+</style>
+<div class='featured-wrapper'>
+  <div class='container'>
+    <div class='row'>
+      <div class='img-responsive-wrapper ratio ratio-16x9 h-100'>
+        <img src={image} alt='' class='w-100 h-100 object-fit-cover' />
+      </div>
+      <div class='featured-overlay'>
+        <a href={link || "#"} class='text-decoration-none'>
+          <h4>{title}</h4>
+          <p>{text}</p>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,7 +1,7 @@
 ---
 import { marked } from "marked";
+import FeaturedBlock from "./FeaturedBlock.astro";
 const { blocks, links } = Astro.props;
-import Person from "./Person.astro";
 ---
 
 <!--
@@ -43,7 +43,6 @@ import Person from "./Person.astro";
 </style>
 
 <div>
-  <!-- {hero && <HeroDetail {...hero} />} -->
   <div class='container my-5'>
     <div class='wrap contents'>
       {
@@ -79,31 +78,20 @@ import Person from "./Person.astro";
                     <div set:html={marked.parse(b.body)} />
                   </div>
                 );
-              case "feat":
+              case "featured":
+                const {title, text, link, inverted, image} = b;
                 return (
-                  <div class='content-block my-5 px-5'>
-                    {b.linked && (
-                      <a id={`${b.link || b.title.split(" ").join("_")}`} />
-                    )}
-                    {b.title && <h3>{b.title}</h3>}
-                    <div class='heroBlock'>
-                      <img src={b.image} alt={b.alt} />
-                      <div class='heroBlock-text'>
-                        <h4>{b.subtitle}</h4>
-                        <p>{b.body}</p>
-                      </div>
-                    </div>
-                  </div>
-                );
+                  <FeaturedBlock title={title}
+                    text={text}
+                    link={link}
+                    inverted={inverted}
+                    image={image}
+                  />);
               case "imageBlock":
                 return (
                   <div class='content-block my-5 px-5'>
                     <img src={b.image} alt={b.alt} />
                   </div>
-                );
-              case "person":
-                return (
-                  <Person {...b}/>
                 );
               default:
                 return <div>{b.type}</div>;
