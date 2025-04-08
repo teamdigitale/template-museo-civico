@@ -1,0 +1,29 @@
+---
+const props = Astro.props;
+const { pic, name, role } = props;
+---
+
+<style lang='scss'>
+  @import "../styles/variables";
+
+  .a_exrta-text {
+    color: #{$color-text-secondary};
+  }
+
+  .a_exrta-text h4 {
+    color: #{$color-text-secondary};
+    font-weight: 400;
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+    letter-spacing: 0;
+  }
+</style>
+<div class='avatar-wrapper avatar-extra-text'>
+  <div class='avatar size-xxl'>
+    <img src={pic} alt='' aria-hidden='true' />
+  </div>
+  <div class='extra-text'>
+    <h4>{name}</h4>
+    <div>{role}</div>
+  </div>
+</div>

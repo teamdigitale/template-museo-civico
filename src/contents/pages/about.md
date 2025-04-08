@@ -35,4 +35,12 @@ blocks:
       neighbour's dog or thinking longingly about tuna brine so snuggles up to
       shoulders or knees and purrs you to sleep so catch eat throw up catch eat
       throw up bad birds. "
+  - type: person
+    pic: /assets/logo.png
+    name: Mr Monster
+    role: One eyed controller
+  - type: person
+    pic: /assets/logo.svg
+    name: Mrs Beast
+    role: Three Eyed Controller
 ---

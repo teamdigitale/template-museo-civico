@@ -95,6 +95,13 @@ collections:
             fields:
               - { label: "Image", name: "image", widget: "image" }
               - { label: "Alt text", name: "alt", widget: "string" }
+          - label: "Person"
+            name: "person"
+            widget: "object"
+            fields:
+              - {label: "Pic", name: "pic", widget: "image", required: true}
+              - {label: "Full Name", name: "name", widget: "string", required: true }
+              - {label: "Role", name: "role", widget: "string", required: true}
       - label: "Timeline"
         name: "timeline"
         widget: "list"

@@ -1,24 +1,7 @@
 ---
 import { marked } from "marked";
 const { blocks, links } = Astro.props;
-// import HeroDetail from "./HeroDetail.astro";
-
-// const heroBlock = blocks.find((b: any) => b.type === "hero");
-// let hero = undefined;
-// if (heroBlock) {
-//   hero = {
-//     item: {
-//       data: {
-//         title: heroBlock.title,
-//         description: heroBlock.text,
-//         image: {
-//           url: heroBlock.image,
-//           alt: heroBlock.title,
-//       }
-//       },
-//     },
-//   };
-// }
+import Person from "./Person.astro";
 ---
 
 <!--
@@ -92,11 +75,11 @@ const { blocks, links } = Astro.props;
                     {b.linked && (
                       <a id={`${b.link || b.title.split(" ").join("_")}`} />
                     )}
-                    {b.title && <h3 class="underline">{b.title}</h3>}
+                    {b.title && <h3 class='underline'>{b.title}</h3>}
                     <div set:html={marked.parse(b.body)} />
                   </div>
                 );
-              case "hero":
+              case "feat":
                 return (
                   <div class='content-block my-5 px-5'>
                     {b.linked && (
@@ -117,6 +100,10 @@ const { blocks, links } = Astro.props;
                   <div class='content-block my-5 px-5'>
                     <img src={b.image} alt={b.alt} />
                   </div>
+                );
+              case "person":
+                return (
+                  <Person {...b}/>
                 );
               default:
                 return <div>{b.type}</div>;
