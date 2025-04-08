@@ -10,7 +10,6 @@ import TeamBlock from "../components/TeamBlock.astro";
 export async function getStaticPaths() {
   const pages = await getCollection("pages");
   console.log(pages.map((i) => i.data.title));
-
   return pages
     .filter((i) => i.data.title !== "home")
     .map((page) => {
@@ -30,9 +29,8 @@ const { page } = Astro.props;
 const blocks = page.data.blocks;
 const links = blocks.filter((b: any) => b.linked);
 
-const teamBlock = page.data.teamBlock;
-
 const timeline = page.data.timeline;
+const teamBlock = page.data.teamBlock;
 
 const heroBlock = page.data.hero;
 let hero = undefined;
@@ -51,7 +49,6 @@ if (heroBlock && heroBlock.image) {
   };
 }
 ---
-
 <Layout>
   <div class='container my-5'>
     <BreadCrumbs path={[slug]} />
@@ -61,11 +58,8 @@ if (heroBlock && heroBlock.image) {
     {!hero && <h1>{page.data.title}</h1>}
     <!-- <small>updated on: {page.data.date}</small> -->
     <PageBlocks blocks={blocks} links={links} />
-
-    {teamBlock && <TeamBlock {...teamBlock} />}
-
     {timeline && <Timeline timeline={timeline} />}
-
+    {teamBlock && <TeamBlock {...teamBlock} />}
     {
       page.rendered?.html && (
         <div class='container my-5'>
