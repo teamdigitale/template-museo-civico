@@ -4,7 +4,11 @@
     "title": "Museo Civico",
     "subtitle": "Museo CIvico di Nome città ",
     "description": "Template di esempio di un museo civico blablablal",
-    "keywords": ["museo", "template", "mah"],
+    "keywords": [
+      "museo",
+      "template",
+      "mah"
+    ],
     "image": "/assets/logo_comitato_200volta.png"
   },
   "socials": [
@@ -52,6 +56,10 @@
             {
               "title": "Organizzazione",
               "link": "/about#org"
+            },
+            {
+              "title": "Storia",
+              "link": "/history"
             }
           ]
         },

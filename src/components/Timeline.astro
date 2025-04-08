@@ -1,0 +1,134 @@
+---
+import { marked } from "marked";
+const { timeline } = Astro.props;
+---
+
+<style lang="scss">
+  @import "../styles/variables";
+
+  .timeline-pin-text::after {
+    background-color: rgba(
+      var(--bs-primary-rgb),
+      var(--bs-bg-opacity)
+    ) !important;
+  }
+
+  .timeline-card-text {
+    color: $color-text-secondary;
+  }
+
+  .it-timeline-wrapper .it-pin-wrapper .pin-icon.timeline-pin-icon {
+    border: none;
+    width: 40px;
+    height: 40px;
+    margin-left: 4px;
+    background-color: $color-text-secondary;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.16);
+  }
+
+  .it-timeline-wrapper .row:after {
+    background: #ccc;
+    bottom: 0;
+  }
+
+  .timeline-item:last-of-type {
+    .card:after {
+      display: none;
+    }
+
+    .card-body {
+      padding-bottom: 0;
+    }
+
+    .timeline-element {
+      padding-bottom: 0;
+    }
+  }
+
+  @media all and (min-width: 992px) {
+    .timeline-wrapper {
+      max-width: 856px;
+      margin: 0 auto;
+    }
+
+    .card {
+      .card-body.timeline-card-body {
+        margin-top: -24px;
+      }
+
+      .card-body .card-title.timeline-title {
+        color: $color-text-secondary;
+        margin-bottom: 0;
+      }
+    }
+
+    .it-timeline-wrapper .row:after {
+      left: 8px;
+    }
+
+    .it-timeline-wrapper .col-12 .timeline-element {
+      left: 0;
+      width: auto;
+    }
+  }
+</style>
+
+<div class="wrap contents timeline-wrapper">
+  <div class="container my-5">
+    <div class="it-timeline-wrapper">
+      <div class="row pt-0">
+        {
+          timeline.map((item: any) => (
+            <>
+              <div />
+              <div class="col-12 timeline-item">
+                <div class="timeline-element pt-lg-0">
+                  <h3 class="it-pin-wrapper it-evidence my-0">
+                    <div class="pin-icon timeline-pin-icon">
+                      <svg class="icon" role="img">
+                        <>
+                          <title>Segnaposto</title>
+                          <use href="https://italia.github.io/bootstrap-italia/dist/svg/sprites.svg#it-bookmark" />
+                        </>
+                      </svg>
+                    </div>
+                    {item.periodTitle && (
+                      <div class="pin-text bg-primary timeline-pin-text py-1">
+                        <span class="timeline-pin-text">
+                          {item.periodTitle}
+                        </span>
+                      </div>
+                    )}
+                  </h3>
+                  <div class="card-wrapper">
+                    <div class="card">
+                      {item.image?.url && (
+                        <div class="img-responsive-wrapper ratio ratio-16x9">
+                          <figure>
+                            <img
+                              src={item.image.url}
+                              alt={item.image.alt}
+                              class="w-100 h-100 object-fit-cover px-4 pt-4 py-lg-4 pt-lg-0"
+                            />
+                          </figure>
+                        </div>
+                      )}
+                      <div class="card-body pt-0 pt-md-5 pt-lg-3 timeline-card-body">
+                        <h4 class="card-title heading-5-lg text-capitalize timeline-title">
+                          {item.title}
+                        </h4>
+                        <p class="font-serif body-serif-lg pt-1 pt-md-3 mb-0 timeline-card-text">
+                          {item.body}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</div>

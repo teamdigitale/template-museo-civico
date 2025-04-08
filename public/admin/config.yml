@@ -111,21 +111,20 @@ collections:
         widget: "list"
         required: false
         types:
-          - label: "Timeline placeholder"
-            name: "placeholder"
-            widget: "object"
-            fields:
-              - { label: "Title", name: "title", widget: "string" }
-              - { label: "Year", name: "year", widget: "number"}
           - label: "Timeline Item"
             name: "item"
             widget: "object"
             fields:
-              - { label: "Title", name: "title", widget: "string" }
-              - { label: "Year", name: "year", widget: "number"  }
-              - { label: "Date", name: "date", widget: "datetime"  }
-              - { label: "Text", name: "body", widget: "markdown"}
-              - { label: "Link", name: "link", widget: "string", required: false }
+              - { label: "Period Title", name: "periodTitle", widget: "string", required: true }
+              - label: "Image"
+                name: "image"
+                widget: "object"
+                required: false
+                fields:
+                    - { label: "Url", name: "url", widget: "image", required: false }
+                    - { label: "Alt", name: "alt", widget: string, default: "thumb", required: false }
+              - { label: "Title", name: "title", widget: "string", required: true }
+              - { label: "Text", name: "body", widget: "markdown", required: true }
       - label: "Team Block"
         name: "teamBlock"
         widget: "object"
