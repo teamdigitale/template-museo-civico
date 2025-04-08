@@ -21,7 +21,7 @@ const { blocks, links } = Astro.props;
     display: flex;
     flex-direction: column;
   }
-  @media (min-width: 20em) {
+  @media (min-width: 60em) {
     .wrap {
       flex-direction: row;
     }
@@ -70,7 +70,7 @@ const { blocks, links } = Astro.props;
             switch (b.type) {
               case "section":
                 return (
-                  <div class='content-block my-5 px-5'>
+                  <div class='content-block my-md-5 px-md-5'>
                     {b.linked && (
                       <a id={`${b.link || b.title.split(" ").join("_")}`} />
                     )}
@@ -79,14 +79,16 @@ const { blocks, links } = Astro.props;
                   </div>
                 );
               case "featured":
-                const {title, text, link, inverted, image} = b;
+                const { title, text, link, inverted, image } = b;
                 return (
-                  <FeaturedBlock title={title}
+                  <FeaturedBlock
+                    title={title}
                     text={text}
                     link={link}
                     inverted={inverted}
                     image={image}
-                  />);
+                  />
+                );
               case "imageBlock":
                 return (
                   <div class='content-block my-5 px-5'>

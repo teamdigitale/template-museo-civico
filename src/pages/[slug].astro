@@ -27,7 +27,7 @@ const { slug } = Astro.params;
 const { page } = Astro.props;
 
 const blocks = page.data.blocks;
-const links = blocks.filter((b: any) => b.linked);
+const links = blocks?.filter((b: any) => b.linked);
 
 const timeline = page.data.timeline;
 const teamBlock = page.data.teamBlock;
@@ -57,7 +57,7 @@ if (heroBlock && heroBlock.image) {
   <div class='container my-5'>
     {!hero && <h1>{page.data.title}</h1>}
     <!-- <small>updated on: {page.data.date}</small> -->
-    <PageBlocks blocks={blocks} links={links} />
+    {blocks && links && <PageBlocks blocks={blocks} links={links} />}
     {timeline && <Timeline timeline={timeline} />}
     {teamBlock && <TeamBlock {...teamBlock} />}
     {
