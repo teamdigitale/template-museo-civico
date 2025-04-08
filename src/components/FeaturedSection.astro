@@ -1,0 +1,53 @@
+---
+const { title, text, link, inverted, image } = Astro.props;
+---
+
+<style lang='scss'>
+  @import "../styles/variables";
+
+  .hero-detail-wrapper {
+    background-color: $hero-bg-color;
+  }
+
+  .hero-detail {
+    background-color: $hero-bg-color;
+    padding: 0;
+  }
+
+  .hero-detail-description {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    color: $color-text-secondary;
+  }
+</style>
+<div class='hero-detail-wrapper my-5'>
+  <div class='container'>
+    <div class='row gx-0 hero-detail'>
+      <div
+        class={`${!inverted ? "order-2 order-lg-1 pe-5 " : "order-2 order-lg-2 ps-5"} col-12 col-lg-6 pt-4 pt-lg-0 d-flex align-items-center`}
+      >
+        <div class='py-2'>
+          <h1>{title}</h1>
+          <p class='hero-detail-description'>{text}</p>
+
+          <span class='share mb-5 mb-lg-0 mt-5'>
+            <a href={link.url} class='btn btn-secondary btn-md'>
+              {link.label}
+            </a>
+          </span>
+        </div>
+      </div>
+      <div
+        class={`${!inverted ? "order-1 order-lg-2" : "order-1 order-lg-1"} col-12 col-lg-6 p-0`}
+      >
+        <div class='img-responsive-wrapper ratio ratio-4x3 h-100'>
+          <img
+            src={image.url || image}
+            alt={image.alt || title}
+            class='w-100 h-100 object-fit-cover'
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

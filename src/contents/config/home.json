@@ -36,5 +36,36 @@
       "title": "Le ultime notizie",
       "type": "news"
     }
+  ],
+  "blocks": [
+    {
+      "type": "featuredSection",
+      "inverted": false,
+      "link": {
+        "external": true,
+        "label": "/museum",
+        "url": "vedi"
+      },
+      "title": "Area Espositiva",
+      "text": "L’esposizione racconta con un centinaio di opere il fondamentale ruolo di Torino per l’affermarsi del Liberty, un’arte che nella capitale sabauda diviene il fulcro di una storia che travolge ogni aspetto della vita e della società.",
+      "image": "/assets/interior-national-gallery-of-art-washington-dc.jpg"
+    },
+    {
+      "type": "imageBlock",
+      "image": "/assets/Dc.jpg",
+      "alt": "10 mila lire"
+    },
+    {
+      "type": "featuredSection",
+      "inverted": false,
+      "link": {
+        "external": true,
+        "url": "/project",
+        "label": "leggi tutto"
+      },
+      "title": "Il progetto",
+      "text": "L’esposizione racconta con un centinaio di opere il fondamentale ruolo di Torino per l’affermarsi del Liberty, un’arte che nella capitale sabauda diviene il fulcro di una storia che travolge ogni aspetto della vita e della società.",
+      "image": "/assets/worlds-best-museums.jpg"
+    }
   ]
 }

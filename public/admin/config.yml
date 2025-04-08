@@ -29,6 +29,34 @@ collections:
               - { label: "Has Overlay", name: "overlayShow", widget: "boolean", default: true }
               - { label: "Overlay Color", name: "overlayColor", widget: "color", required: false}
               - { label: "Overlay Opacity", name: "overlayAlpha", widget: "number", default: 9 , max: 10, min : 1 , required: false}
+          - label: "Blocks"
+            name: "blocks"
+            widget: "list"
+            required: false
+            types:
+              - label: "Featured Section"
+                name: "featuredSection"
+                required: false
+                widget: "object"
+                fields:
+                  - { label: "Title", name: "title", widget: "string", required: false }
+                  - { label: "Text", name: "text", widget: "string", required: false }
+                  - { label: "Inverted", name: "inverted", widget: "boolean",  default: false }
+                  - { label: "Image", name: "image", widget: "image",  required: false }
+                  - label: "link"
+                    name: "link"
+                    widget: "object"
+                    required: false
+                    fields:
+                      - { label: "Label", name: "label", widget: "string" , required: false }
+                      - { label: "Url Esterno", name: "external", widget: "boolean",  default: true}
+                      - { label: "url", name: "url", widget: "string"}
+              - label: "Image Block"
+                name: "imageBlock"
+                widget: "object"
+                fields:
+                  - { label: "Image", name: "image", widget: "image" }
+                  - { label: "Alt text", name: "alt", widget: "string" }
           - label: "Sections"
             name: "sections"
             widget: "list"

@@ -6,6 +6,7 @@ import CardWork from "../components/CardWork.astro";
 import HeroHome from "../components/HeroHome.astro";
 import CTA from "../components/CTA.astro";
 import CardNews from "../components/CardNews.astro";
+import FeaturedSection from "../components/FeaturedSection.astro";
 
 // Get all entries from a collection.
 // Requires the name of the collection as an argument.
@@ -15,19 +16,48 @@ const allWorks = await getCollection("works");
 
 const home: any = await getCollection("home");
 
-const hero = home.find((item: any) => item.id === "hero").data;
-const newsletter = home.find((item: any) => item.id === "newsletter").data;
-const cta = home.find((item: any) => item.id === "cta").data;
-const sections = home.find((item: any) => item.id === "sections").data;
+const hero = home.find((item: any) => item.id === "hero")?.data;
+const cta = home.find((item: any) => item.id === "cta")?.data;
+const sections = home.find((item: any) => item.id === "sections")?.data;
+const blocks = home.find((item: any) => item.id === "blocks")?.data;
+const newsletter = home.find((item: any) => item.id === "newsletter")?.data;
 ---
 
 <Layout>
   {hero && <HeroHome {...hero} />}
 
   {
+    blocks && (
+      <div class='content-wrap'>
+        {blocks.map((b: any) => {
+          switch (b.type) {
+            case "featuredSection":
+              return <FeaturedSection {...b} />;
+            case "imageBlock":
+              return (
+                <div class="row">
+                  <div class='img-responsive-wrapper ratio ratio-16x9'>
+                    <figure>
+                      <img
+                        src={b.image}
+                        alt={b.alt}
+                        class='w-100 h-100 object-fit-cover'
+                      />
+                    </figure>
+                  </div>
+                </div>
+              );
+            default:
+              return <div>{b.type}</div>;
+          }
+        })}
+      </div>
+    )
+  }
+  {
     sections?.map((section: any, index: number) => {
       const odd = index % 2 === 0;
-      const cn = odd ? "bg-gray" : "";
+      const cn = odd ? "" : "bg-gray";
       return (
         <div class={cn}>
           <div class='container my-5'>
@@ -74,18 +104,26 @@ const sections = home.find((item: any) => item.id === "sections").data;
       );
     })
   }
-
   {
-    newsletter && (
-      <div class='container my-5'>
-        <CTA {...newsletter} />
+    newsletter && newsletter.show && (
+      <div class='container my-5 bg-gray'>
+        <div class='text-center'>
+          <h1>{newsletter.title}</h1>
+          {newsletter.text && (
+            <p class='d-none d-lg-block'>{newsletter.text}</p>
+          )}
+          {newsletter.link && (
+            <a
+              href={newsletter.link.url}
+              class='btn btn-secondary btn-lg'
+              target={newsletter.link.external ? "_blank" : ""}
+            >
+              {newsletter.link.label}
+            </a>
+          )}
+        </div>
       </div>
     )
   }
-
-  {
-    cta && (
-        <CTA {...cta} />
-    )
-  }
+  {cta && cta.show && <CTA {...cta} />}
 </Layout>
