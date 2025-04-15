@@ -69,28 +69,28 @@ const cn =
   }
 </style>
 
-<section class='heroHome'>
-  <!-- - img-->
-  <div class='bg-img img-responsive-wrapper'>
-    <div class='img-responsive'>
-      <div class='img-wrapper'>
-        <img src={image} alt={title} />
-      </div>
-    </div>
-  </div>
-  <!-- - texts-->
-  <div class='container'>
-    <div class='row'>
-      <div class='col-12'>
+<div class='container'>
+  <div class='row'>
+    <div class='col-12'>
+      <section class='heroHome'>
+        <!-- - img-->
+        <div class='bg-img img-responsive-wrapper'>
+          <div class='img-responsive'>
+            <div class='img-wrapper'>
+              <img src={image} alt={title} />
+            </div>
+          </div>
+        </div>
+        <!-- - texts-->
         <div class=''>
           <h1>{title}</h1>
           <p class='d-none d-lg-block'>
             {text}
           </p>
         </div>
-      </div>
+        <!-- - overlay-->
+        {overlayShow && <div class='bg-overlay' style={cn} />}
+      </section>
     </div>
   </div>
-  <!-- - overlay-->
-  {overlayShow && <div class='bg-overlay' style={cn} />}
-</section>
+</div>
