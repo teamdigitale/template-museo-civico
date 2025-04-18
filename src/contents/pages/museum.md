@@ -56,8 +56,7 @@ blocks:
     linked: true
     title: Direttori e Personale
     link: people
-    body:
-      "Meowing chowing and wowing pet me pet me pet me pet me, bite, scratch,
+    body: "Meowing chowing and wowing pet me pet me pet me pet me, bite, scratch,
       why are you petting me and pee in the shoe i like fish mouse chase dog
       then run away yet tickle my belly at your own peril i will pester for food
       when you're in the kitchen even if it's salad "
@@ -68,22 +67,25 @@ blocks:
     linked: true
     title: Explore
     link: explore
-    body: >
-
+    body: >-
       ## Lists
 
 
       Unordered
 
 
-      + Create a list by starting a line with `+`, `-`, or `*`
+      * Create a list by starting a line with `+`, `-`, or `*`
 
-      + Sub-lists are made by indenting 2 spaces:
-        - Marker character change forces new list start:
+      * Sub-lists are made by indenting 2 spaces:
+
+        * Marker character change forces new list start:
+
           * Ac tristique libero volutpat at
-          + Facilisis in pretium nisl aliquet
-          - Nulla volutpat aliquam velit
-      + Very easy!
+
+          * Facilisis in pretium nisl aliquet
+
+          * Nulla volutpat aliquam velit
+      * Very easy!
 
 
       Ordered
@@ -95,11 +97,9 @@ blocks:
 
       3. Integer molestie lorem at massa
 
+      4. You can use sequential numbers...
 
-
-      1. You can use sequential numbers...
-
-      1. ...or keep all the numbers as `1.`
+      5. ...or keep all the numbers as `1.`
 
 
       Start numbering with offset:
@@ -107,8 +107,7 @@ blocks:
 
       57. foo
 
-      1. bar
-
+      58. bar
 
 
       ## Code
@@ -119,10 +118,18 @@ blocks:
 
       Indented code
 
-          // Some comments
-          line 1 of code
-          line 2 of code
-          line 3 of code
+
+      ```
+
+      // Some comments
+
+      line 1 of code
+
+      line 2 of code
+
+      line 3 of code
+
+      ```
 
 
       Block code "fences"
@@ -138,7 +145,7 @@ blocks:
       Syntax highlighting
 
 
-      ``` js
+      ```js
 
       var foo = function (bar) {
         return bar++;
@@ -153,30 +160,29 @@ blocks:
       ## Tables
 
 
-      | Option | Description |
+      | Option | Description                                                               |
 
-      | ------ | ----------- |
+      | ------ | ------------------------------------------------------------------------- |
 
       | data   | path to data files to supply the data that will be passed into templates. |
 
-      | engine | engine to be used for processing templates. Handlebars is the default. |
+      | engine | engine to be used for processing templates. Handlebars is the default.    |
 
-      | ext    | extension to be used for dest files. |
+      | ext    | extension to be used for dest files.                                      |
 
 
       Right aligned columns
 
 
-      | Option | Description |
+      | Option | Description                                                               |
 
-      | ------:| -----------:|
+      | ------ | ------------------------------------------------------------------------- |
 
       | data   | path to data files to supply the data that will be passed into templates. |
 
-      | engine | engine to be used for processing templates. Handlebars is the default. |
+      | engine | engine to be used for processing templates. Handlebars is the default.    |
 
-      | ext    | extension to be used for dest files. |
-
+      | ext    | extension to be used for dest files.                                      |
 
 
       ## Links
@@ -198,3 +204,22 @@ blocks:
       shoulders or knees and purrs you to sleep so catch eat throw up catch eat
       throw up bad birds. "
 ---
+The Museum of Modern Art (MoMA) is a world-renowned museum in New York City that houses modern and contemporary art. It's considered one of the most important museums of modern art in the world. 
+
+### Features: 
+
+* Collection: Includes paintings, sculptures, photographs, film, and electronic media
+* Artists: Works by Pablo Picasso, Jackson Pollock, Andy Warhol, and others
+* Exhibitions: Special exhibits are held throughout the museum
+* Library and archives: Contains over 300,000 additional items
+
+### History and location: 
+
+Founded in 1929 by Alfred H. Barr
+Located at 11 West 53rd St, New York, NY 10019
+Located in Midtown Manhattan, between 5th and 6th Avenues
+
+### Visiting:
+
+Open daily, except Thanksgiving and Christmas 
+Some recommend starting at the top floor to see the oldest works, then moving down to see more recent works
