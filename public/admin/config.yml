@@ -1,8 +1,13 @@
 local_backend: true
 backend:
-  name: "git-gateway"
+  # name: "git-gateway"
+  #repository: "https://github.com/teamdigitale/template-museo-civico"
+  name: github
   branch: "main" # Branch to update (optional; defaults to master)
-  repository: "https://github.com/teamdigitale/template-museo-civico"
+  repo: teamdigitale/template-museo-civico
+  site_domain: template-museo-civico.vercel.app
+  base_url: https://template-museo-civico.vercel.app
+  auth_endpoint: oauth
 
 media_folder: "public/assets" # Location where files will be stored in the repo
 public_folder: "/assets" # The src attribute for uploaded media
