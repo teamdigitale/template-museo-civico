@@ -3,6 +3,8 @@ import { resolve } from "path";
 import react from "@astrojs/react";
 import decapCmsOauth from "astro-decap-cms-oauth";
 
+import vercel from "@astrojs/vercel";
+
 // const sveltia = {
 //   decapCMSSrcUrl: "https://unpkg.com/@sveltia/cms/dist/sveltia-cms.js",
 // };
@@ -19,4 +21,5 @@ export default defineConfig({
   },
 
   integrations: [react(), decapCmsOauth()],
+  adapter: vercel(),
 });
