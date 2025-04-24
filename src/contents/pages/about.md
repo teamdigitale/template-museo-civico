@@ -92,4 +92,4 @@ teamBlock:
         pic: /assets/screenshot-2025-04-04-at-10.55.50.png
         role: the boy
 ---
-Lorem ipsum dolor
+Lorem ipsum dolor..
